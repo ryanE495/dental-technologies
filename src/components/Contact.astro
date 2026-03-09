@@ -126,8 +126,9 @@
 
 	.contact-info {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-template-columns: repeat(4, 1fr);
 		gap: 2rem;
+		text-align: center;
 	}
 
 	.contact-item {
@@ -192,10 +193,11 @@
 		display: block;
 		color: #374151;
 		text-decoration: none;
-		font-size: 1rem;
+		font-size: 0.9rem;
 		font-weight: 500;
 		margin-bottom: 0.5rem;
 		transition: color 0.3s ease;
+		word-break: break-all;
 	}
 
 	.contact-link:hover {
@@ -223,7 +225,7 @@
 		}
 
 		.contact-info {
-			grid-template-columns: 1fr;
+			grid-template-columns: 1fr 1fr;
 			gap: 1.5rem;
 		}
 
