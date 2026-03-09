@@ -1,0 +1,234 @@
+---
+---
+
+<section id="contact" class="contact section-padding">
+	<div class="container">
+		<div class="cta-content">
+			<div class="cta-header">
+				<h2>let's work together</h2>
+				<p class="cta-description">
+					Ready to partner with a lab that puts quality first? Reach out — we'd love to hear about your practice.
+				</p>
+			</div>
+			
+			<div class="contact-info">
+				<div class="contact-item">
+					<div class="contact-icon">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" fill="none"/>
+						</svg>
+					</div>
+					<div class="contact-details">
+						<h3>Phone</h3>
+						<a href="tel:+1-555-000-0000" class="contact-link">(555) 000-0000</a>
+						<span class="contact-note">Mon–Fri, 8 AM – 5 PM</span>
+					</div>
+				</div>
+				
+				<div class="contact-item">
+					<div class="contact-icon">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+							<polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none"/>
+						</svg>
+					</div>
+					<div class="contact-details">
+						<h3>Email</h3>
+						<a href="mailto:info@dentaltechlab.com" class="contact-link">info@dentaltechlab.com</a>
+						<span class="contact-note">We respond within 24 hours</span>
+					</div>
+				</div>
+				
+				<div class="contact-item">
+					<div class="contact-icon">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" fill="none"/>
+							<circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+						</svg>
+					</div>
+					<div class="contact-details">
+						<h3>Location</h3>
+						<span class="contact-text">Local Dental Lab</span>
+						<span class="contact-note">Pickup & delivery available</span>
+					</div>
+				</div>
+				
+				<div class="contact-item">
+					<div class="contact-icon">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+							<polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" fill="none"/>
+						</svg>
+					</div>
+					<div class="contact-details">
+						<h3>Hours</h3>
+						<span class="contact-text">Monday – Friday</span>
+						<span class="contact-note">8:00 AM – 5:00 PM</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact {
+		background: #efeeea;
+		padding: 6rem 0;
+	}
+
+	.cta-content {
+		max-width: 900px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.cta-header {
+		margin-bottom: 4rem;
+	}
+
+	.cta-header h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 300;
+		color: #111827;
+		margin-bottom: 1.5rem;
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		position: relative;
+		transition: color 0.3s ease;
+		cursor: pointer;
+		font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+	}
+
+	.cta-header h2:hover {
+		color: #374151;
+	}
+
+	.cta-header h2::after {
+		content: '';
+		position: absolute;
+		bottom: -0.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 300px;
+		height: 4px;
+		background: #374151;
+	}
+
+	.cta-description {
+		font-size: 1.25rem;
+		color: #6B7280;
+		max-width: 600px;
+		margin: 1.5rem auto 0;
+		line-height: 1.6;
+		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+	}
+
+	.contact-info {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 2rem;
+	}
+
+	.contact-item {
+		background: #f8f9fa;
+		padding: 2rem;
+		border: 1px solid #E5E7EB;
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.contact-item::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 2px;
+		background: linear-gradient(90deg, transparent, #374151, transparent);
+		transition: left 0.6s ease;
+	}
+
+	.contact-item:hover::before {
+		left: 100%;
+	}
+
+	.contact-item:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 15px 35px rgba(55, 65, 81, 0.08);
+		background: white;
+	}
+
+	.contact-icon {
+		width: 56px;
+		height: 56px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 1.5rem auto;
+		color: #111827;
+		background: white;
+		border: 2px solid #E5E7EB;
+		transition: all 0.3s ease;
+	}
+
+	.contact-item:hover .contact-icon {
+		transform: scale(1.05);
+		background: #111827;
+		color: white;
+		border-color: #111827;
+	}
+
+	.contact-details h3 {
+		margin-bottom: 0.5rem;
+		color: #111827;
+		font-size: 1.125rem;
+		font-weight: 500;
+	}
+
+	.contact-link {
+		display: block;
+		color: #374151;
+		text-decoration: none;
+		font-size: 1rem;
+		font-weight: 500;
+		margin-bottom: 0.5rem;
+		transition: color 0.3s ease;
+	}
+
+	.contact-link:hover {
+		color: #111827;
+	}
+
+	.contact-text {
+		display: block;
+		color: #374151;
+		font-size: 1rem;
+		font-weight: 500;
+		margin-bottom: 0.5rem;
+	}
+
+	.contact-note {
+		font-size: 0.875rem;
+		color: #9CA3AF;
+		font-style: italic;
+		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+	}
+
+	@media (max-width: 768px) {
+		.contact {
+			padding: 4rem 0;
+		}
+
+		.contact-info {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.contact-item {
+			padding: 1.5rem;
+		}
+	}
+</style>

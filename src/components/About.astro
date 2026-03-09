@@ -1,0 +1,264 @@
+---
+---
+
+<section id="about" class="about section-padding">
+	<div class="container">
+		<div class="about-content">
+			<div class="section-content">
+				<h2>who we are</h2>
+				<div class="accent-line"></div>
+				
+				<div class="supporting-text">
+					<p>At Dental Technologies Lab, we specialize in crafting custom dental prosthetics with an unwavering commitment to quality. From precision-milled crowns and bridges to hand-layered veneers, every restoration that leaves our lab reflects decades of expertise and a dedication to excellence. We partner with dental practices to deliver restorations that fit perfectly, look natural, and last — because your patients deserve nothing less than the best.</p>
+				</div>
+				
+				<div class="team-photos-space">
+					<div class="photo-placeholder">
+						<span>team photo</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="values-side">
+				<div class="value-item">
+					<span class="value-number">01</span>
+					<h3>precision</h3>
+					<p>Every restoration is crafted to exact specifications using advanced CAD/CAM technology and meticulous hand-finishing.</p>
+				</div>
+				<div class="value-item">
+					<span class="value-number">02</span>
+					<h3>quality</h3>
+					<p>We use only premium materials and maintain rigorous quality control at every stage of fabrication.</p>
+				</div>
+				<div class="value-item">
+					<span class="value-number">03</span>
+					<h3>partnership</h3>
+					<p>We work closely with your practice to understand your needs and deliver results that exceed expectations.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		background-color: #efeeea;
+		padding: 8rem 0;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.about-content {
+		display: grid;
+		grid-template-columns: 1.2fr 0.8fr;
+		gap: 6rem;
+		align-items: start;
+		padding-left: 2rem;
+	}
+
+	.section-content {
+		max-width: 520px;
+	}
+
+	.section-content h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 300;
+		line-height: 1.3;
+		color: #111827;
+		margin-bottom: 1.5rem;
+		letter-spacing: -0.01em;
+		font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+		cursor: pointer;
+		transition: color 0.3s ease;
+	}
+
+	.section-content h2:hover {
+		color: #374151;
+	}
+
+	.accent-line {
+		width: 200px;
+		height: 4px;
+		background-color: #374151;
+		margin-bottom: 4rem;
+	}
+
+	.supporting-text p {
+		font-size: 1.125rem;
+		line-height: 1.7;
+		color: #111827;
+		font-weight: 400;
+		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.supporting-text p::after {
+		content: '|';
+		color: #374151;
+		animation: blink 1s infinite;
+		margin-left: 2px;
+	}
+
+	.supporting-text p.typing-complete::after {
+		display: none;
+	}
+
+	@keyframes blink {
+		0%, 50% { opacity: 1; }
+		51%, 100% { opacity: 0; }
+	}
+
+	.team-photos-space {
+		margin-top: 4rem;
+	}
+
+	.photo-placeholder {
+		width: 100%;
+		height: 200px;
+		background: rgba(55, 65, 81, 0.05);
+		border: 2px dashed rgba(55, 65, 81, 0.15);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #9CA3AF;
+		font-size: 0.875rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+
+	.values-side {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		padding-top: 2rem;
+	}
+
+	.value-item {
+		padding: 2rem;
+		transition: all 0.3s ease;
+		position: relative;
+	}
+
+	.value-item:hover {
+		transform: translateX(5px);
+	}
+
+	.value-number {
+		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+		font-size: 0.875rem;
+		color: #9CA3AF;
+		letter-spacing: 0.1em;
+		display: block;
+		margin-bottom: 0.5rem;
+	}
+
+	.value-item h3 {
+		font-size: 1.5rem;
+		font-weight: 300;
+		color: #111827;
+		margin-bottom: 0.75rem;
+		font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+	}
+
+	.value-item p {
+		font-size: 1rem;
+		line-height: 1.6;
+		color: #6B7280;
+		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+	}
+
+	@media (max-width: 1024px) {
+		.about-content {
+			grid-template-columns: 1fr;
+			gap: 4rem;
+			text-align: center;
+			padding-left: 0;
+		}
+
+		.section-content {
+			max-width: 100%;
+		}
+
+		.accent-line {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.about {
+			padding: 3rem 0 6rem 0;
+		}
+
+		.container {
+			padding: 0 0.5rem;
+		}
+
+		.supporting-text p {
+			font-size: 1rem !important;
+			animation: none !important;
+			opacity: 1 !important;
+		}
+
+		.team-photos-space {
+			margin-top: 3rem;
+		}
+
+		.photo-placeholder {
+			height: 150px;
+		}
+
+		.value-item {
+			padding: 1.5rem;
+		}
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const aboutSection = document.querySelector('#about');
+		const textElement = document.querySelector('#about .supporting-text p');
+		
+		if (!aboutSection || !textElement) return;
+		
+		const originalText = textElement.textContent || '';
+		textElement.textContent = '';
+		
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					setTimeout(() => {
+						startTypewriter(textElement, originalText.trim());
+					}, 800);
+					observer.disconnect();
+				}
+			});
+		}, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
+		
+		observer.observe(aboutSection);
+		
+		function startTypewriter(element: Element, text: string) {
+			let index = 0;
+			const speed = 25;
+			
+			function typeCharacter() {
+				if (index < text.length) {
+					element.textContent = text.slice(0, index + 1);
+					index++;
+					setTimeout(typeCharacter, speed);
+				} else {
+					setTimeout(() => {
+						element.classList.add('typing-complete');
+					}, 1000);
+				}
+			}
+			
+			typeCharacter();
+		}
+	});
+</script>

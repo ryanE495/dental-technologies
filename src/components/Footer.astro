@@ -1,0 +1,193 @@
+---
+---
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer-content">
+			<div class="footer-brand">
+				<div class="logo">
+					<div class="logo-circle">
+						<span class="logo-text">DTL</span>
+					</div>
+					<span class="logo-name">Dental Technologies Lab</span>
+				</div>
+				<p class="brand-description">
+					Precision dental restorations crafted with advanced technology and meticulous attention to detail. Your trusted lab partner.
+				</p>
+			</div>
+			
+			<div class="footer-links">
+				<div class="link-group">
+					<h4>Services</h4>
+					<ul>
+						<li><a href="#services">Crowns & Bridges</a></li>
+						<li><a href="#services">Veneers & Laminates</a></li>
+						<li><a href="#services">Implant Restorations</a></li>
+						<li><a href="#services">Dentures & Partials</a></li>
+						<li><a href="#services">Custom Shades</a></li>
+						<li><a href="#services">Digital Impressions</a></li>
+					</ul>
+				</div>
+				
+				<div class="link-group">
+					<h4>Quick Links</h4>
+					<ul>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#gallery">Our Work</a></li>
+						<li><a href="#find-us">Find Us</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+				
+				<div class="link-group">
+					<h4>Contact</h4>
+					<ul>
+						<li><a href="tel:+1-555-000-0000">(555) 000-0000</a></li>
+						<li><a href="mailto:info@dentaltechlab.com">info@dentaltechlab.com</a></li>
+						<li>Mon–Fri, 8 AM – 5 PM</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<p>&copy; 2026 Dental Technologies Lab. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		background: #111827;
+		color: white;
+		padding: 4rem 0 2rem;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.footer-content {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 4rem;
+		margin-bottom: 3rem;
+	}
+
+	.footer-brand {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.logo-circle {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		border: 1.5px solid #6B7280;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.logo-text {
+		font-family: 'NeueHaasDisplayMedium', 'Inter', sans-serif;
+		font-size: 0.6rem;
+		letter-spacing: 0.1em;
+		color: #D1D5DB;
+	}
+
+	.logo-name {
+		font-weight: 500;
+		font-size: 1.125rem;
+		color: white;
+	}
+
+	.brand-description {
+		line-height: 1.7;
+		color: #9CA3AF;
+		max-width: 300px;
+		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+		font-size: 0.95rem;
+	}
+
+	.footer-links {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+
+	.link-group h4 {
+		margin-bottom: 1rem;
+		color: white;
+		font-size: 1rem;
+		font-weight: 500;
+	}
+
+	.link-group ul {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.link-group a {
+		color: #9CA3AF;
+		text-decoration: none;
+		font-size: 0.9rem;
+		transition: color 0.3s ease;
+	}
+
+	.link-group a:hover {
+		color: white;
+	}
+
+	.link-group li:not(:has(a)) {
+		color: #9CA3AF;
+		font-size: 0.9rem;
+	}
+
+	.footer-bottom {
+		display: flex;
+		justify-content: center;
+		padding-top: 2rem;
+		border-top: 1px solid #374151;
+	}
+
+	.footer-bottom p {
+		color: #6B7280;
+		font-size: 0.875rem;
+		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+	}
+
+	@media (max-width: 1024px) {
+		.footer-content {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+		}
+
+		.footer-links {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.footer {
+			padding: 3rem 0 1.5rem;
+		}
+
+		.footer-links {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+	}
+</style>

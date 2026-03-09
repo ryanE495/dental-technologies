@@ -1,0 +1,325 @@
+---
+---
+
+<section class="hero">
+	<div class="container">
+		<div class="hero-content">
+			<div class="minimal-logo">
+				<div class="logo-circle">
+					<span class="logo-text">DTL</span>
+				</div>
+			</div>
+			
+			<h1 class="massive-headline">
+				<span class="line-one">
+					<span class="word" style="animation-delay: 0.1s;">dental</span>
+					<span class="word space" style="animation-delay: 0.3s;"></span>
+					<span class="word" style="animation-delay: 0.5s;">technologies</span>
+				</span>
+				<span class="line-two">
+					<span class="word-group">lab</span>
+				</span>
+			</h1>
+			
+			<p class="supporting-text">
+				precision craftsmanship for your practice<span class="cursor">|</span>
+			</p>
+			
+			<a href="#contact" class="minimal-button">Get Started</a>
+			
+			<div class="subtle-circle"></div>
+			<div class="subtle-circle-two"></div>
+			<div class="subtle-circle-three"></div>
+			<div class="subtle-circle-four"></div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		min-height: 80vh;
+		background: #efeeea;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		position: relative;
+		padding: 4rem 0 3rem 0;
+		overflow: hidden;
+	}
+
+	.hero-content {
+		text-align: left;
+		align-self: flex-start;
+		margin-top: -4rem;
+		max-width: 900px;
+		position: relative;
+		z-index: 1;
+		padding: 0 1rem;
+	}
+
+	.minimal-logo {
+		margin-bottom: 4rem;
+	}
+
+	.logo-circle {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		border: 2px solid #374151;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.logo-text {
+		font-family: 'NeueHaasDisplayMedium', 'Inter', sans-serif;
+		font-size: 1rem;
+		letter-spacing: 0.15em;
+		color: #374151;
+	}
+
+	.massive-headline {
+		font-size: clamp(3rem, 10vw, 9rem);
+		font-weight: 300;
+		line-height: 0.75;
+		color: #111827;
+		margin-bottom: 3rem;
+		letter-spacing: -0.02em;
+		font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+		margin-top: -1rem;
+	}
+
+	.line-one {
+		display: inline;
+		margin-right: 1rem;
+		white-space: nowrap;
+	}
+
+	.line-two {
+		display: block;
+		margin-top: clamp(1.5rem, 4vw, 3rem);
+	}
+
+	.word {
+		display: inline-block;
+		opacity: 0;
+		animation: wordFadeIn 0.6s ease-out forwards;
+	}
+
+	.word.space {
+		display: inline-block;
+		width: 0.02em;
+	}
+
+	.word-group {
+		opacity: 0;
+		animation: fadeInUp 0.6s ease-out 1.0s forwards;
+		color: #111827;
+	}
+
+	@keyframes wordFadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(15px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.supporting-text {
+		font-size: clamp(1rem, 2.5vw, 1.125rem);
+		color: #6B7280;
+		margin-bottom: clamp(3rem, 6vw, 5rem);
+		font-weight: 400;
+		line-height: 1.6;
+		max-width: 500px;
+		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+	}
+
+	.cursor {
+		color: #374151;
+		animation: blink 1s infinite;
+	}
+
+	@keyframes blink {
+		0%, 50% { opacity: 1; }
+		51%, 100% { opacity: 0; }
+	}
+
+	.minimal-button {
+		display: inline-block;
+		padding: clamp(0.875rem, 2vw, 1rem) clamp(2rem, 4vw, 2.5rem);
+		background-color: #111827;
+		color: white;
+		text-decoration: none;
+		font-size: clamp(0.8rem, 2vw, 1rem);
+		font-weight: 500;
+		border-radius: 0;
+		transition: all 0.3s ease;
+		letter-spacing: 0.025em;
+		text-transform: uppercase;
+	}
+
+	.minimal-button:hover {
+		background-color: #374151;
+		transform: translateY(-1px);
+		box-shadow: 0 10px 25px rgba(55, 65, 81, 0.3);
+	}
+
+	.subtle-circle {
+		position: absolute;
+		top: 50%;
+		right: -200px;
+		width: 300px;
+		height: 300px;
+		border: 1px solid rgba(55, 65, 81, 0.15);
+		border-radius: 50%;
+		transform: translateY(-50%);
+		pointer-events: none;
+	}
+
+	.subtle-circle-two {
+		position: absolute;
+		top: 20%;
+		left: -150px;
+		width: 200px;
+		height: 200px;
+		border: 1px solid rgba(55, 65, 81, 0.12);
+		border-radius: 50%;
+		pointer-events: none;
+	}
+
+	.subtle-circle-three {
+		position: absolute;
+		bottom: 10%;
+		right: -100px;
+		width: 150px;
+		height: 150px;
+		border: 1px solid rgba(55, 65, 81, 0.10);
+		border-radius: 50%;
+		pointer-events: none;
+	}
+
+	.subtle-circle-four {
+		position: absolute;
+		top: 10%;
+		right: 20%;
+		width: 80px;
+		height: 80px;
+		border: 1px solid rgba(55, 65, 81, 0.08);
+		border-radius: 50%;
+		pointer-events: none;
+	}
+
+	@media (max-width: 1200px) {
+		.subtle-circle,
+		.subtle-circle-two,
+		.subtle-circle-three,
+		.subtle-circle-four {
+			display: none;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding: 4rem 0 0 0;
+			min-height: 80vh;
+		}
+
+		.hero-content {
+			margin-top: -4rem;
+			padding: 0 0.5rem;
+			max-width: 100%;
+		}
+
+		.minimal-logo {
+			margin-bottom: 2rem;
+			text-align: center;
+		}
+
+		.logo-circle {
+			width: 50px;
+			height: 50px;
+		}
+
+		.logo-text {
+			font-size: 0.7rem;
+		}
+
+		.massive-headline {
+			margin-bottom: 1.5rem;
+			text-align: center;
+			line-height: 0.85;
+		}
+
+		.line-two {
+			margin-top: 1rem;
+		}
+
+		.supporting-text {
+			margin-bottom: 1rem;
+			text-align: center;
+			max-width: 100%;
+		}
+
+		.minimal-button {
+			display: block;
+			text-align: center;
+			width: fit-content;
+			margin: 0 auto;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero {
+			padding: 3rem 0 0 0;
+			min-height: 70vh;
+		}
+
+		.hero-content {
+			margin-top: -2rem;
+			padding: 0 0.25rem;
+		}
+
+		.minimal-logo {
+			margin-bottom: 1.5rem;
+		}
+
+		.logo-circle {
+			width: 40px;
+			height: 40px;
+		}
+
+		.massive-headline {
+			margin-bottom: 1rem;
+			line-height: 0.9;
+		}
+
+		.line-two {
+			margin-top: 0.5rem;
+		}
+
+		.supporting-text {
+			margin-bottom: 0.5rem;
+			font-size: 0.95rem;
+		}
+
+		.minimal-button {
+			padding: 0.75rem 1.5rem;
+			font-size: 0.75rem;
+		}
+	}
+</style>

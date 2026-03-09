@@ -1,0 +1,111 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Dental Technologies Lab — precision craftsmanship for your practice. Custom crowns, bridges, veneers, implant restorations, and more." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@font-face {
+		font-family: 'NeueHaasDisplayRoman';
+		src: url('/NeueHaasDisplayRoman.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'NeueHaasDisplayThin';
+		src: url('/NeueHaasDisplayThin.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'NeueHaasDisplayMedium';
+		src: url('/NeueHaasDisplayMediu.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		width: 100%;
+		min-height: 100%;
+		font-family: 'NeueHaasDisplayRoman', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+		line-height: 1.6;
+		color: #111827;
+		background-color: #ffffff;
+		overflow-x: hidden;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #f5f5f5;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #374151;
+		border-radius: 3px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #111827;
+	}
+
+	h1, h2, h3, h4 {
+		font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+	}
+
+	p {
+		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.section-padding {
+		padding: 6rem 0;
+	}
+
+	@media (max-width: 768px) {
+		.section-padding {
+			padding: 3rem 0;
+		}
+	}
+</style>
