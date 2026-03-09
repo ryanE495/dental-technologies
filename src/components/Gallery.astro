@@ -11,74 +11,50 @@
 		
 		<div class="gallery-grid">
 			<div class="gallery-item animate-on-scroll">
-				<div class="gallery-placeholder">
-					<div class="split">
-						<span class="label">before</span>
+				<div class="gallery-card">
+					<div class="gallery-images">
+						<div class="img-half">
+							<img src="/images/dental-before-1.jpg" alt="Crown restoration - before" />
+							<span class="label">before</span>
+						</div>
+						<div class="img-half">
+							<img src="/images/dental-after-1.jpg" alt="Crown restoration - after" />
+							<span class="label">after</span>
+						</div>
 					</div>
-					<div class="divider"></div>
-					<div class="split">
-						<span class="label">after</span>
-					</div>
+					<div class="gallery-caption">Crown Restoration</div>
 				</div>
 			</div>
 			
 			<div class="gallery-item animate-on-scroll">
-				<div class="gallery-placeholder">
-					<div class="split">
-						<span class="label">before</span>
+				<div class="gallery-card">
+					<div class="gallery-images">
+						<div class="img-half">
+							<img src="/images/dental-before-2.jpg" alt="Veneer case - before" />
+							<span class="label">before</span>
+						</div>
+						<div class="img-half">
+							<img src="/images/dental-after-2.jpg" alt="Veneer case - after" />
+							<span class="label">after</span>
+						</div>
 					</div>
-					<div class="divider"></div>
-					<div class="split">
-						<span class="label">after</span>
-					</div>
+					<div class="gallery-caption">Porcelain Veneers</div>
 				</div>
 			</div>
 			
 			<div class="gallery-item animate-on-scroll">
-				<div class="gallery-placeholder">
-					<div class="split">
-						<span class="label">before</span>
+				<div class="gallery-card">
+					<div class="gallery-images">
+						<div class="img-half">
+							<img src="/images/dental-before-3.jpg" alt="Bridge work - before" />
+							<span class="label">before</span>
+						</div>
+						<div class="img-half">
+							<img src="/images/dental-after-3.jpg" alt="Bridge work - after" />
+							<span class="label">after</span>
+						</div>
 					</div>
-					<div class="divider"></div>
-					<div class="split">
-						<span class="label">after</span>
-					</div>
-				</div>
-			</div>
-			
-			<div class="gallery-item animate-on-scroll">
-				<div class="gallery-placeholder">
-					<div class="split">
-						<span class="label">before</span>
-					</div>
-					<div class="divider"></div>
-					<div class="split">
-						<span class="label">after</span>
-					</div>
-				</div>
-			</div>
-			
-			<div class="gallery-item animate-on-scroll">
-				<div class="gallery-placeholder">
-					<div class="split">
-						<span class="label">before</span>
-					</div>
-					<div class="divider"></div>
-					<div class="split">
-						<span class="label">after</span>
-					</div>
-				</div>
-			</div>
-			
-			<div class="gallery-item animate-on-scroll">
-				<div class="gallery-placeholder">
-					<div class="split">
-						<span class="label">before</span>
-					</div>
-					<div class="divider"></div>
-					<div class="split">
-						<span class="label">after</span>
-					</div>
+					<div class="gallery-caption">Bridge Fabrication</div>
 				</div>
 			</div>
 		</div>
@@ -130,7 +106,7 @@
 	.gallery-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 1.5rem;
+		gap: 2rem;
 	}
 
 	.gallery-item {
@@ -138,41 +114,69 @@
 	}
 
 	.gallery-item:hover {
-		transform: translateY(-3px);
+		transform: translateY(-5px);
 	}
 
-	.gallery-placeholder {
-		display: flex;
-		height: 220px;
-		background: rgba(55, 65, 81, 0.03);
+	.gallery-card {
+		background: white;
 		border: 1px solid #E5E7EB;
 		overflow: hidden;
 		transition: all 0.3s ease;
 	}
 
-	.gallery-item:hover .gallery-placeholder {
-		box-shadow: 0 10px 30px rgba(200, 169, 110, 0.12);
+	.gallery-item:hover .gallery-card {
+		box-shadow: 0 15px 35px rgba(200, 169, 110, 0.12);
 		border-color: #C8A96E;
 	}
 
-	.split {
-		flex: 1;
+	.gallery-images {
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		height: 220px;
 	}
 
-	.divider {
-		width: 1px;
-		background: #D1D5DB;
+	.img-half {
+		flex: 1;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.img-half img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.gallery-item:hover .img-half img {
+		transform: scale(1.05);
+	}
+
+	.img-half:first-child {
+		border-right: 2px solid #C8A96E;
 	}
 
 	.label {
-		font-size: 0.75rem;
+		position: absolute;
+		bottom: 8px;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 0.65rem;
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
-		color: #9CA3AF;
+		color: white;
 		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+		background: rgba(0, 0, 0, 0.5);
+		padding: 0.25rem 0.75rem;
+		backdrop-filter: blur(4px);
+	}
+
+	.gallery-caption {
+		padding: 1rem 1.5rem;
+		font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+		font-size: 0.9rem;
+		color: #374151;
+		text-align: center;
+		letter-spacing: 0.025em;
 	}
 
 	@media (max-width: 1024px) {
@@ -198,10 +202,10 @@
 
 		.gallery-grid {
 			grid-template-columns: 1fr;
-			gap: 1rem;
+			gap: 1.5rem;
 		}
 
-		.gallery-placeholder {
+		.gallery-images {
 			height: 180px;
 		}
 	}
