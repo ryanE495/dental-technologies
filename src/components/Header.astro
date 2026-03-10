@@ -6,9 +6,7 @@
 		<div class="container">
 			<div class="nav-content">
 				<a href="/" class="logo">
-					<div class="logo-circle">
-						<span class="logo-text">DTL</span>
-					</div>
+					<img src="https://bswmrfxdadcmuyhmsagv.supabase.co/storage/v1/object/public/portfolio-images/logov8.webp" alt="Dental Technologies Lab" class="logo-img" />
 				</a>
 				
 				<div class="nav-links">
@@ -66,27 +64,16 @@
 		color: #111827;
 	}
 
-	.logo-circle {
-		width: 48px;
-		height: 48px;
-		border-radius: 50%;
-		border: 2px solid #C8A96E;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	.logo-img {
+		height: 95px;
+		width: auto;
+		object-fit: contain;
 		transition: all 0.3s ease;
+		margin: -15px 0;
 	}
 
-	.logo:hover .logo-circle {
-		border-color: #C8A96E;
+	.logo:hover .logo-img {
 		transform: scale(1.05);
-	}
-
-	.logo-text {
-		font-family: 'NeueHaasDisplayMedium', 'Inter', sans-serif;
-		font-size: 0.75rem;
-		letter-spacing: 0.1em;
-		color: #C8A96E;
 	}
 
 	.nav-links {
