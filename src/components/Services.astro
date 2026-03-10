@@ -3,47 +3,59 @@
 
 <section id="services" class="services section-padding">
 	<div class="container">
-		<div class="section-header animate-on-scroll">
-			<h2>what we do</h2>
-			<div class="accent-line"></div>
-			<p class="section-subtitle">Comprehensive restorative solutions crafted with precision and care</p>
-		</div>
+		<div class="subtle-circle"></div>
+		<div class="subtle-circle-two"></div>
+		<div class="subtle-circle-three"></div>
 		
-		<div class="services-grid">
-			<div class="service-card animate-on-scroll">
-				<div class="card-number">01</div>
-				<h3>Crowns & Bridges</h3>
-				<p>Full-contour zirconia, porcelain-fused-to-metal, and all-ceramic crowns and bridges. Each restoration is precision-milled and hand-finished for optimal fit and aesthetics.</p>
+		<div class="services-layout">
+			<div class="section-header animate-on-scroll">
+				<h2>what we do</h2>
+				<div class="accent-line"></div>
+				<p class="section-subtitle">Comprehensive restorative solutions crafted with precision and care</p>
+				<div class="scroll-arrow">
+					<svg width="64" height="42" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path id="arrow-head" d="M8 12L24 24L40 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+						<path id="arrow-stem" d="M24 12L24 22" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
 			</div>
 			
-			<div class="service-card animate-on-scroll">
-				<div class="card-number">02</div>
-				<h3>Veneers & Laminates</h3>
-				<p>Ultra-thin porcelain veneers and laminates that transform smiles. Custom shade-matching and layering techniques deliver lifelike translucency and natural beauty.</p>
-			</div>
-			
-			<div class="service-card animate-on-scroll">
-				<div class="card-number">03</div>
-				<h3>Implant Restorations</h3>
-				<p>Custom abutments and implant-supported crowns, bridges, and hybrid prosthetics. Compatible with all major implant systems for seamless integration.</p>
-			</div>
-			
-			<div class="service-card animate-on-scroll">
-				<div class="card-number">04</div>
-				<h3>Dentures & Partials</h3>
-				<p>Full and partial dentures fabricated with premium teeth and characterized gingival tones. Designed for comfort, function, and a natural appearance.</p>
-			</div>
-			
-			<div class="service-card animate-on-scroll">
-				<div class="card-number">05</div>
-				<h3>Custom Shades</h3>
-				<p>Expert shade-matching services including custom staining, characterization, and photography-assisted color verification to ensure every restoration blends seamlessly.</p>
-			</div>
-			
-			<div class="service-card animate-on-scroll">
-				<div class="card-number">06</div>
-				<h3>Digital Impressions</h3>
-				<p>We accept digital impressions from all major intraoral scanners. Streamlined digital workflows mean faster turnaround and exceptional accuracy for your cases.</p>
+			<div class="services-cards">
+				<div class="service-card animate-on-scroll">
+					<div class="card-number">01</div>
+					<h3>Crowns & Bridges</h3>
+					<p>Full-contour zirconia, porcelain-fused-to-metal, and all-ceramic crowns and bridges. Each restoration is precision-milled and hand-finished for optimal fit and aesthetics.</p>
+				</div>
+				
+				<div class="service-card animate-on-scroll">
+					<div class="card-number">02</div>
+					<h3>Veneers & Laminates</h3>
+					<p>Ultra-thin porcelain veneers and laminates that transform smiles. Custom shade-matching and layering techniques deliver lifelike translucency and natural beauty.</p>
+				</div>
+				
+				<div class="service-card animate-on-scroll">
+					<div class="card-number">03</div>
+					<h3>Implant Restorations</h3>
+					<p>Custom abutments and implant-supported crowns, bridges, and hybrid prosthetics. Compatible with all major implant systems for seamless integration.</p>
+				</div>
+				
+				<div class="service-card animate-on-scroll">
+					<div class="card-number">04</div>
+					<h3>Dentures & Partials</h3>
+					<p>Full and partial dentures fabricated with premium teeth and characterized gingival tones. Designed for comfort, function, and a natural appearance.</p>
+				</div>
+				
+				<div class="service-card animate-on-scroll">
+					<div class="card-number">05</div>
+					<h3>Custom Shades</h3>
+					<p>Expert shade-matching services including custom staining, characterization, and photography-assisted color verification to ensure every restoration blends seamlessly.</p>
+				</div>
+				
+				<div class="service-card animate-on-scroll">
+					<div class="card-number">06</div>
+					<h3>Digital Impressions</h3>
+					<p>We accept digital impressions from all major intraoral scanners. Streamlined digital workflows mean faster turnaround and exceptional accuracy for your cases.</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -63,10 +75,17 @@
 		padding: 0 1.5rem;
 	}
 
+	.services-layout {
+		display: grid;
+		grid-template-columns: 1fr 1.5fr;
+		gap: 4rem;
+		align-items: flex-start;
+	}
+
 	.section-header {
 		text-align: left;
-		margin-bottom: 5rem;
-		padding-left: 2rem;
+		position: sticky;
+		top: 2rem;
 	}
 
 	.section-header h2 {
@@ -97,7 +116,7 @@
 		line-height: 1.6;
 		color: #6B7280;
 		font-weight: 400;
-		max-width: 500px;
+		max-width: 400px;
 		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
 		overflow: hidden;
 		white-space: nowrap;
@@ -121,6 +140,68 @@
 		50% { border-color: #C8A96E; }
 	}
 
+	/* Scroll Arrow */
+	.scroll-arrow {
+		margin-top: 2rem;
+		margin-left: 3rem;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		color: #C8A96E;
+		height: 120px;
+		max-height: 1200px;
+		overflow: visible;
+		position: relative;
+		z-index: 10;
+		pointer-events: none;
+	}
+
+	.scroll-arrow svg {
+		height: auto;
+		min-height: 32px;
+		max-height: 1200px;
+		overflow: visible;
+		width: 48px;
+		pointer-events: none;
+	}
+
+	/* Subtle circles */
+	.subtle-circle {
+		position: absolute;
+		top: 20%;
+		left: -200px;
+		width: 300px;
+		height: 300px;
+		border: 1px solid rgba(200, 169, 110, 0.15);
+		border-radius: 50%;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.subtle-circle-two {
+		position: absolute;
+		bottom: 10%;
+		left: -100px;
+		width: 200px;
+		height: 200px;
+		border: 1px solid rgba(200, 169, 110, 0.12);
+		border-radius: 50%;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.subtle-circle-three {
+		position: absolute;
+		top: 50%;
+		left: 5%;
+		width: 100px;
+		height: 100px;
+		border: 1px solid rgba(200, 169, 110, 0.10);
+		border-radius: 50%;
+		pointer-events: none;
+		z-index: 0;
+	}
+
 	:global(.animate-on-scroll) {
 		opacity: 0 !important;
 		transform: translateY(30px) !important;
@@ -132,9 +213,9 @@
 		transform: translateY(0) !important;
 	}
 
-	.services-grid {
+	.services-cards {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: 1fr 1fr;
 		gap: 2rem;
 	}
 
@@ -171,7 +252,7 @@
 	.card-number {
 		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
 		font-size: 0.8rem;
-		color: #9CA3AF;
+		color: #C8A96E;
 		letter-spacing: 0.15em;
 		margin-bottom: 1.5rem;
 	}
@@ -191,8 +272,29 @@
 		font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
 	}
 
+	@media (max-width: 1200px) {
+		.subtle-circle,
+		.subtle-circle-two,
+		.subtle-circle-three {
+			display: none;
+		}
+	}
+
 	@media (max-width: 1024px) {
-		.services-grid {
+		.services-layout {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+		}
+
+		.section-header {
+			position: static;
+		}
+
+		.scroll-arrow {
+			display: none;
+		}
+
+		.services-cards {
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
@@ -204,7 +306,6 @@
 
 		.section-header {
 			text-align: center;
-			padding-left: 0;
 		}
 
 		.accent-line {
@@ -221,7 +322,7 @@
 			max-width: 100%;
 		}
 
-		.services-grid {
+		.services-cards {
 			grid-template-columns: 1fr;
 			gap: 1.5rem;
 		}
@@ -239,6 +340,7 @@
 		
 		if (!servicesSection) return;
 
+		// Scroll reveal animations
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
@@ -257,5 +359,55 @@
 		}, { threshold: 0.2, rootMargin: '0px 0px -20% 0px' });
 
 		observer.observe(servicesSection);
+
+		// Expanding arrow on scroll
+		const arrowStem = document.querySelector('#services .scroll-arrow #arrow-stem');
+		const arrowHead = document.querySelector('#services .scroll-arrow #arrow-head');
+		const scrollArrowContainer = document.querySelector('#services .scroll-arrow');
+		
+		function updateArrowStem() {
+			if (!arrowStem || !arrowHead || !servicesSection || !scrollArrowContainer) return;
+			
+			const rect = servicesSection.getBoundingClientRect();
+			const sectionHeight = servicesSection.offsetHeight;
+			const windowHeight = window.innerHeight;
+			
+			let progress = 0;
+			
+			if (rect.top <= windowHeight && rect.bottom >= 0) {
+				if (rect.top <= windowHeight * 0.5) {
+					const triggerPoint = windowHeight * 0.5;
+					const scrolledDistance = Math.max(0, triggerPoint - rect.top);
+					const totalAnimationDistance = sectionHeight * 0.8;
+					progress = Math.min(1, scrolledDistance / Math.max(totalAnimationDistance, 1));
+				}
+			}
+			
+			const baseContainerHeight = 120;
+			const maxContainerHeight = Math.min(1200, sectionHeight * 1.0);
+			const currentContainerHeight = baseContainerHeight + (progress * (maxContainerHeight - baseContainerHeight));
+			scrollArrowContainer.style.height = `${currentContainerHeight}px`;
+			
+			const arrowSvg = scrollArrowContainer.querySelector('svg');
+			if (arrowSvg) {
+				const viewBoxHeight = Math.max(42, currentContainerHeight);
+				arrowSvg.setAttribute('viewBox', `0 0 64 ${viewBoxHeight}`);
+				arrowSvg.style.height = `${currentContainerHeight}px`;
+			}
+			
+			const baseStemEnd = 22;
+			const maxStemEnd = currentContainerHeight - 60;
+			const currentStemEnd = baseStemEnd + (progress * (maxStemEnd - baseStemEnd));
+			
+			arrowStem.setAttribute('d', `M24 12L24 ${currentStemEnd}`);
+			
+			const arrowHeadY = Math.max(12, currentStemEnd - 15);
+			const arrowTipY = currentStemEnd;
+			
+			arrowHead.setAttribute('d', `M8 ${arrowHeadY}L24 ${arrowTipY}L40 ${arrowHeadY}`);
+		}
+		
+		window.addEventListener('scroll', updateArrowStem);
+		updateArrowStem();
 	});
 </script>
