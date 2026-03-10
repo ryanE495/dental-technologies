@@ -1,140 +1,256 @@
 ---
+const services = [
+  { num: '01', title: 'Crowns & Bridges', desc: 'Full-contour zirconia, PFM, all-ceramic' },
+  { num: '02', title: 'Veneers & Laminates', desc: 'Ultra-thin porcelain, custom shade-matching' },
+  { num: '03', title: 'Implant Restorations', desc: 'Custom abutments, all major systems' },
+  { num: '04', title: 'Dentures & Partials', desc: 'Full/partial, premium teeth, characterized gingival tones' },
+  { num: '05', title: 'Custom Shades', desc: 'Expert shade-matching, staining, characterization' },
+  { num: '06', title: 'Digital Impressions', desc: 'All major intraoral scanners, digital workflows' },
+];
 ---
 
-<section id="services" class="services section-padding">
-	<div class="container">
-		<div class="services-layout">
-			<div class="left-side">
-				<div class="section-header animate-on-scroll">
-					<h2>what we do</h2>
-					<div class="accent-line"></div>
-					<p class="section-subtitle">Comprehensive restorative solutions crafted with precision and care</p>
-				</div>
-				<div class="scroll-arrow">
-					<svg width="48" height="42" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path id="services-arrow-head" d="M8 12L24 24L40 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-						<path id="services-arrow-stem" d="M24 12L24 22" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</div>
-			</div>
-			
-			<div class="services-cards">
-				<div class="service-card animate-on-scroll">
-					<div class="card-number">01</div>
-					<h3>Crowns & Bridges</h3>
-					<p>Full-contour zirconia, porcelain-fused-to-metal, and all-ceramic crowns and bridges. Each restoration is precision-milled and hand-finished for optimal fit and aesthetics.</p>
-				</div>
-				<div class="service-card animate-on-scroll">
-					<div class="card-number">02</div>
-					<h3>Veneers & Laminates</h3>
-					<p>Ultra-thin porcelain veneers and laminates that transform smiles. Custom shade-matching and layering techniques deliver lifelike translucency and natural beauty.</p>
-				</div>
-				<div class="service-card animate-on-scroll">
-					<div class="card-number">03</div>
-					<h3>Implant Restorations</h3>
-					<p>Custom abutments and implant-supported crowns, bridges, and hybrid prosthetics. Compatible with all major implant systems for seamless integration.</p>
-				</div>
-				<div class="service-card animate-on-scroll">
-					<div class="card-number">04</div>
-					<h3>Dentures & Partials</h3>
-					<p>Full and partial dentures fabricated with premium teeth and characterized gingival tones. Designed for comfort, function, and a natural appearance.</p>
-				</div>
-				<div class="service-card animate-on-scroll">
-					<div class="card-number">05</div>
-					<h3>Custom Shades</h3>
-					<p>Expert shade-matching services including custom staining, characterization, and photography-assisted color verification to ensure every restoration blends seamlessly.</p>
-				</div>
-				<div class="service-card animate-on-scroll">
-					<div class="card-number">06</div>
-					<h3>Digital Impressions</h3>
-					<p>We accept digital impressions from all major intraoral scanners. Streamlined digital workflows mean faster turnaround and exceptional accuracy for your cases.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+<section id="services" class="services-section">
+  <div class="services-container">
+    <div class="services-left">
+      <div class="services-left-inner">
+        <div class="gold-line"></div>
+        <h2 class="services-title">what we do</h2>
+        <p class="services-subtitle">
+          <span class="typewriter-text"></span><span class="typewriter-cursor">|</span>
+        </p>
+        <div class="arrow-container" id="services-arrow-container">
+          <svg width="48" viewBox="0 0 48 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:120px;">
+            <path id="services-arrow-stem" d="M24 12L24 80" stroke="#C8A96E" stroke-width="2" stroke-linecap="round"/>
+            <path id="services-arrow-head" d="M8 68L24 80L40 68" stroke="#C8A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="services-cards">
+      {services.map((s, i) => (
+        <div class="service-card animate-on-scroll" style={`transition-delay: ${i * 0.1}s`}>
+          <span class="card-num">{s.num}</span>
+          <h3 class="card-title">{s.title}</h3>
+          <p class="card-desc">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
 </section>
 
 <style>
-	.services { background-color: #efeeea; padding: 4rem 0 0 0; position: relative; overflow: hidden; }
-	.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-	.services-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: flex-start; }
-	.left-side { position: relative; overflow: hidden; }
-	.section-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: #111827; margin-bottom: 1.5rem; font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif; cursor: pointer; transition: color 0.3s ease; }
-	.section-header h2:hover { color: #C8A96E; }
-	.accent-line { width: 200px; height: 4px; background-color: #C8A96E; margin-bottom: 2rem; }
-	.section-subtitle { font-size: 1.125rem; line-height: 1.6; color: #6B7280; max-width: 400px; font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif; overflow: hidden; white-space: nowrap; width: 0; border-right: 2px solid #C8A96E; animation: typewriter 3s steps(60, end) forwards, blinkCursor 0.8s infinite; animation-play-state: paused; }
-	.section-subtitle.start-typing { animation-play-state: running; }
-	@keyframes typewriter { from { width: 0; } to { width: 100%; } }
-	@keyframes blinkCursor { from, to { border-color: transparent; } 50% { border-color: #C8A96E; } }
-	.scroll-arrow { position: absolute; top: 100%; left: 3rem; color: #C8A96E; height: 120px; max-height: 1200px; overflow: visible; pointer-events: none; }
-	.scroll-arrow svg { height: auto; min-height: 32px; max-height: 1200px; overflow: visible; width: 48px; }
-	:global(.animate-on-scroll) { opacity: 0 !important; transform: translateY(30px) !important; transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important; }
-	:global(.animate-on-scroll.animate-in) { opacity: 1 !important; transform: translateY(0) !important; }
-	.services-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-	.service-card { padding: 2.5rem 2rem; background: #f8f9fa; border: 1px solid #E5E7EB; transition: all 0.3s ease; position: relative; overflow: hidden; }
-	.service-card::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #C8A96E, transparent); transition: left 0.6s ease; }
-	.service-card:hover::before { left: 100%; }
-	.service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(200, 169, 110, 0.1); background: white; }
-	.card-number { font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif; font-size: 0.8rem; color: #C8A96E; letter-spacing: 0.15em; margin-bottom: 1.5rem; }
-	.service-card h3 { font-size: 1.25rem; font-weight: 400; color: #111827; margin-bottom: 1rem; font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif; }
-	.service-card p { font-size: 0.95rem; line-height: 1.7; color: #6B7280; font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif; }
-	@media (max-width: 1024px) {
-		.services-layout { grid-template-columns: 1fr; gap: 3rem; }
-		.left-side { position: static; }
-		.scroll-arrow { display: none; }
-		.services-cards { grid-template-columns: repeat(2, 1fr); }
-	}
-	@media (max-width: 768px) {
-		.services { padding: 4rem 0; }
-		.section-header { text-align: center; }
-		.accent-line { margin-left: auto; margin-right: auto; }
-		.section-subtitle { animation: none !important; white-space: normal; border-right: none; width: auto; text-align: center; max-width: 100%; }
-		.services-cards { grid-template-columns: 1fr; gap: 1.5rem; }
-		.service-card { padding: 2rem 1.5rem; }
-	}
+  :global(.animate-on-scroll) {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  :global(.animate-on-scroll.animate-in) {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .services-section {
+    background: #efeeea;
+    padding: 4rem 0 2rem 0;
+    overflow: hidden;
+  }
+
+  .services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .services-left {
+    position: sticky;
+    top: 6rem;
+  }
+
+  .services-left-inner {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gold-line {
+    width: 48px;
+    height: 3px;
+    background: #C8A96E;
+    margin-bottom: 1rem;
+  }
+
+  .services-title {
+    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
+    font-size: 2.5rem;
+    color: #111827;
+    margin: 0 0 0.75rem 0;
+    text-transform: lowercase;
+  }
+
+  .services-subtitle {
+    font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
+    font-size: 1.1rem;
+    color: #6B7280;
+    margin: 0 0 2rem 0;
+    min-height: 1.5em;
+  }
+
+  .typewriter-cursor {
+    color: #C8A96E;
+    animation: blink 0.8s step-end infinite;
+    font-weight: 300;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .arrow-container {
+    position: absolute;
+    top: auto;
+    left: 0;
+    height: 120px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .services-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: #f8f9fa;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #C8A96E, #e8d5a8);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .service-card:hover::before {
+    transform: translateX(0);
+  }
+
+  .card-num {
+    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
+    color: #C8A96E;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-title {
+    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
+    color: #111827;
+    font-size: 1.15rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .card-desc {
+    font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
+    color: #6B7280;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .services-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .services-left {
+      position: relative;
+      top: 0;
+    }
+    .arrow-container {
+      display: none;
+    }
+    .services-cards {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 
 <script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const section = document.querySelector('#services');
-		const subtitle = document.querySelector('#services .section-subtitle');
-		if (!section) return;
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					const elements = entry.target.querySelectorAll('.animate-on-scroll');
-					elements.forEach((el, i) => { setTimeout(() => el.classList.add('animate-in'), i * 150); });
-					if (subtitle) setTimeout(() => subtitle.classList.add('start-typing'), 700);
-					observer.unobserve(entry.target);
-				}
-			});
-		}, { threshold: 0.2, rootMargin: '0px 0px -20% 0px' });
-		observer.observe(section);
+  document.addEventListener('DOMContentLoaded', () => {
+    // Typewriter
+    const text = 'precision craftsmanship for every restoration';
+    const el = document.querySelector('.typewriter-text');
+    if (el) {
+      let i = 0;
+      const type = () => {
+        if (i < text.length) {
+          el.textContent += text[i];
+          i++;
+          setTimeout(type, 50);
+        }
+      };
+      setTimeout(type, 500);
+    }
 
-		// Expanding arrow
-		const arrowStem = document.querySelector('#services-arrow-stem');
-		const arrowHead = document.querySelector('#services-arrow-head');
-		const arrowContainer = document.querySelector('#services .scroll-arrow');
-		function updateArrow() {
-			if (!arrowStem || !arrowHead || !section || !arrowContainer) return;
-			const rect = section.getBoundingClientRect();
-			const sectionHeight = section.offsetHeight;
-			const wh = window.innerHeight;
-			let progress = 0;
-			if (rect.top <= wh && rect.bottom >= 0 && rect.top <= wh * 0.5) {
-				const scrolled = Math.max(0, wh * 0.5 - rect.top);
-				progress = Math.min(1, scrolled / (sectionHeight * 0.8));
-			}
-			const baseH = 120, maxH = Math.min(1200, sectionHeight * 1.0);
-			const h = baseH + (progress * (maxH - baseH));
-			arrowContainer.style.height = `${h}px`;
-			const svg = arrowContainer.querySelector('svg');
-			if (svg) { svg.setAttribute('viewBox', `0 0 48 ${Math.max(42, h)}`); svg.style.height = `${h}px`; }
-			const stemEnd = 22 + (progress * (h - 82));
-			arrowStem.setAttribute('d', `M24 12L24 ${stemEnd}`);
-			arrowHead.setAttribute('d', `M8 ${Math.max(12, stemEnd - 15)}L24 ${stemEnd}L40 ${Math.max(12, stemEnd - 15)}`);
-		}
-		window.addEventListener('scroll', updateArrow);
-		updateArrow();
-	});
+    // Arrow
+    const section = document.getElementById('services');
+    const arrowContainer = document.getElementById('services-arrow-container');
+    const arrowStem = document.getElementById('services-arrow-stem');
+    const arrowHead = document.getElementById('services-arrow-head');
+    if (!section || !arrowContainer || !arrowStem || !arrowHead) return;
+
+    function updateArrow() {
+      const rect = section.getBoundingClientRect();
+      const rightCol = document.querySelector('.services-cards') as HTMLElement | null;
+      const maxH = rightCol ? rightCol.offsetHeight - 40 : 400;
+      const wh = window.innerHeight;
+      let progress = 0;
+      if (rect.top <= wh && rect.bottom >= 0 && rect.top <= wh * 0.5) {
+        progress = Math.min(1, Math.max(0, wh * 0.5 - rect.top) / (maxH * 1.5));
+      }
+      const h = 80 + (progress * (maxH - 80));
+      arrowContainer.style.height = h + 'px';
+      const svg = arrowContainer.querySelector('svg');
+      if (svg) {
+        svg.setAttribute('viewBox', '0 0 48 ' + Math.max(42, h));
+        svg.style.height = h + 'px';
+      }
+      const stemEnd = 22 + (progress * (h - 60));
+      arrowStem.setAttribute('d', 'M24 12L24 ' + stemEnd);
+      arrowHead.setAttribute('d', 'M8 ' + Math.max(12, stemEnd - 12) + 'L24 ' + stemEnd + 'L40 ' + Math.max(12, stemEnd - 12));
+    }
+    window.addEventListener('scroll', updateArrow);
+    updateArrow();
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  });
 </script>

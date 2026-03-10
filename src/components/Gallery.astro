@@ -1,158 +1,261 @@
 ---
+const cases = [
+  { id: 1, caption: 'Crown Restoration' },
+  { id: 2, caption: 'Porcelain Veneers' },
+  { id: 3, caption: 'Bridge Fabrication' },
+  { id: 4, caption: 'Implant Restoration' },
+  { id: 5, caption: 'Custom Shade Match' },
+  { id: 6, caption: 'Full Denture' },
+];
 ---
 
-<section id="gallery" class="gallery section-padding">
-	<div class="container">
-		<div class="gallery-layout">
-			<div class="left-side">
-				<div class="section-header animate-on-scroll">
-					<h2>see our work</h2>
-					<div class="accent-line"></div>
-					<p class="section-subtitle">Before and after results that speak for themselves</p>
-				</div>
-				<div class="scroll-arrow">
-					<svg width="48" height="42" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path id="gallery-arrow-head" d="M8 12L24 24L40 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-						<path id="gallery-arrow-stem" d="M24 12L24 22" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</div>
-			</div>
-			
-			<div class="gallery-cards">
-				<div class="gallery-item animate-on-scroll">
-					<div class="gallery-card">
-						<div class="gallery-images">
-							<div class="img-half"><img src="/images/dental-before-1.jpg" alt="Crown restoration - before" /><span class="label">before</span></div>
-							<div class="img-half"><img src="/images/dental-after-1.jpg" alt="Crown restoration - after" /><span class="label">after</span></div>
-						</div>
-						<div class="gallery-caption">Crown Restoration</div>
-					</div>
-				</div>
-				<div class="gallery-item animate-on-scroll">
-					<div class="gallery-card">
-						<div class="gallery-images">
-							<div class="img-half"><img src="/images/dental-before-2.jpg" alt="Veneer case - before" /><span class="label">before</span></div>
-							<div class="img-half"><img src="/images/dental-after-2.jpg" alt="Veneer case - after" /><span class="label">after</span></div>
-						</div>
-						<div class="gallery-caption">Porcelain Veneers</div>
-					</div>
-				</div>
-				<div class="gallery-item animate-on-scroll">
-					<div class="gallery-card">
-						<div class="gallery-images">
-							<div class="img-half"><img src="/images/dental-before-3.jpg" alt="Bridge work - before" /><span class="label">before</span></div>
-							<div class="img-half"><img src="/images/dental-after-3.jpg" alt="Bridge work - after" /><span class="label">after</span></div>
-						</div>
-						<div class="gallery-caption">Bridge Fabrication</div>
-					</div>
-				</div>
-				<div class="gallery-item animate-on-scroll">
-					<div class="gallery-card">
-						<div class="gallery-images">
-							<div class="img-half"><img src="/images/dental-before-4.jpg" alt="Implant case - before" /><span class="label">before</span></div>
-							<div class="img-half"><img src="/images/dental-after-4.jpg" alt="Implant case - after" /><span class="label">after</span></div>
-						</div>
-						<div class="gallery-caption">Implant Restoration</div>
-					</div>
-				</div>
-				<div class="gallery-item animate-on-scroll">
-					<div class="gallery-card">
-						<div class="gallery-images">
-							<div class="img-half"><img src="/images/dental-before-5.jpg" alt="Custom shade - before" /><span class="label">before</span></div>
-							<div class="img-half"><img src="/images/dental-after-5.jpg" alt="Custom shade - after" /><span class="label">after</span></div>
-						</div>
-						<div class="gallery-caption">Custom Shade Match</div>
-					</div>
-				</div>
-				<div class="gallery-item animate-on-scroll">
-					<div class="gallery-card">
-						<div class="gallery-images">
-							<div class="img-half"><img src="/images/dental-before-6.jpg" alt="Full denture - before" /><span class="label">before</span></div>
-							<div class="img-half"><img src="/images/dental-after-6.jpg" alt="Full denture - after" /><span class="label">after</span></div>
-						</div>
-						<div class="gallery-caption">Full Denture</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<section id="gallery" class="gallery-section">
+  <div class="gallery-layout">
+    <div class="gallery-left">
+      <div class="gallery-left-content">
+        <div class="gold-line"></div>
+        <h2 class="gallery-title">see our work</h2>
+        <p class="gallery-subtitle">Precision craftsmanship visible in every restoration. Browse our before and after transformations.</p>
+        <div class="arrow-container" id="gallery-arrow-container">
+          <svg viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:48px;height:80px;">
+            <path id="gallery-arrow-stem" d="M24 12L24 22" stroke="#C8A96E" stroke-width="2" stroke-linecap="round"/>
+            <path id="gallery-arrow-head" d="M8 12L24 22L40 12" stroke="#C8A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-cards">
+      {cases.map(c => (
+        <div class="gallery-card animate-on-scroll">
+          <div class="card-images">
+            <div class="card-img-wrap">
+              <img src={`/images/dental-before-${c.id}.jpg`} alt={`Before ${c.caption}`} loading="lazy" />
+              <span class="img-label label-before">Before</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-img-wrap">
+              <img src={`/images/dental-after-${c.id}.jpg`} alt={`After ${c.caption}`} loading="lazy" />
+              <span class="img-label label-after">After</span>
+            </div>
+          </div>
+          <div class="card-caption">{c.caption}</div>
+        </div>
+      ))}
+    </div>
+  </div>
 </section>
 
 <style>
-	.gallery { background-color: #efeeea; position: relative; overflow: hidden; padding: 6rem 0 3rem 0; }
-	.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-	.gallery-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: flex-start; }
-	.left-side { position: relative; overflow: hidden; }
-	.section-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: #111827; margin-bottom: 1.5rem; font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif; cursor: pointer; transition: color 0.3s ease; }
-	.section-header h2:hover { color: #C8A96E; }
-	.accent-line { width: 200px; height: 4px; background-color: #C8A96E; margin-bottom: 2rem; }
-	.section-subtitle { font-size: 1.125rem; line-height: 1.6; color: #6B7280; font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif; }
-	.scroll-arrow { position: absolute; top: 100%; left: 3rem; color: #C8A96E; height: 120px; max-height: 1200px; overflow: visible; pointer-events: none; }
-	.scroll-arrow svg { height: auto; min-height: 32px; max-height: 1200px; overflow: visible; width: 48px; }
-	.gallery-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-	.gallery-item { transition: all 0.3s ease; }
-	.gallery-item:hover { transform: translateY(-5px); }
-	.gallery-card { background: white; border: 1px solid #E5E7EB; overflow: hidden; transition: all 0.3s ease; }
-	.gallery-item:hover .gallery-card { box-shadow: 0 15px 35px rgba(200, 169, 110, 0.12); border-color: #C8A96E; }
-	.gallery-images { display: flex; height: 180px; }
-	.img-half { flex: 1; position: relative; overflow: hidden; }
-	.img-half img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-	.gallery-item:hover .img-half img { transform: scale(1.05); }
-	.img-half:first-child { border-right: 2px solid #C8A96E; }
-	.label { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: white; font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif; background: rgba(0, 0, 0, 0.5); padding: 0.25rem 0.75rem; backdrop-filter: blur(4px); }
-	.gallery-caption { padding: 1rem 1.5rem; font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif; font-size: 0.9rem; color: #374151; text-align: center; letter-spacing: 0.025em; }
-	:global(.animate-on-scroll) { opacity: 0 !important; transform: translateY(30px) !important; transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important; }
-	:global(.animate-on-scroll.animate-in) { opacity: 1 !important; transform: translateY(0) !important; }
-	@media (max-width: 1024px) {
-		.gallery-layout { grid-template-columns: 1fr; gap: 3rem; }
-		.left-side { position: static; }
-		.scroll-arrow { display: none; }
-		.gallery-cards { grid-template-columns: repeat(2, 1fr); }
-	}
-	@media (max-width: 768px) {
-		.gallery { padding: 4rem 0; }
-		.section-header { text-align: center; }
-		.accent-line { margin-left: auto; margin-right: auto; }
-		.gallery-cards { grid-template-columns: 1fr; gap: 1.5rem; }
-		.gallery-images { height: 160px; }
-	}
+  .gallery-section {
+    background: #efeeea;
+    padding: 4rem 0 2rem 0;
+    overflow: hidden;
+  }
+
+  .gallery-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .gallery-left {
+    position: sticky;
+    top: 6rem;
+    overflow: hidden;
+  }
+
+  .gallery-left-content {
+    position: relative;
+  }
+
+  .gold-line {
+    width: 48px;
+    height: 3px;
+    background: #C8A96E;
+    margin-bottom: 1rem;
+  }
+
+  .gallery-title {
+    font-family: 'NeueHaasDisplayRoman', sans-serif;
+    font-size: 2.2rem;
+    color: #18181b;
+    text-transform: lowercase;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.1;
+  }
+
+  .gallery-subtitle {
+    font-family: 'NeueHaasDisplayThin', sans-serif;
+    font-size: 1rem;
+    color: #52525b;
+    line-height: 1.6;
+    margin: 0 0 2rem 0;
+  }
+
+  .arrow-container {
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    width: 48px;
+    height: 80px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .gallery-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .gallery-card {
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .gallery-card:hover {
+    border-color: #C8A96E;
+    box-shadow: 0 4px 20px rgba(200, 169, 110, 0.15);
+  }
+
+  .card-images {
+    display: flex;
+    position: relative;
+  }
+
+  .card-img-wrap {
+    flex: 1;
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+  }
+
+  .card-img-wrap img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+
+  .gallery-card:hover .card-img-wrap img {
+    transform: scale(1.05);
+  }
+
+  .card-divider {
+    width: 2px;
+    background: #C8A96E;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .img-label {
+    position: absolute;
+    bottom: 8px;
+    font-family: 'NeueHaasDisplayThin', sans-serif;
+    font-size: 0.7rem;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .label-before {
+    left: 8px;
+  }
+
+  .label-after {
+    right: 8px;
+  }
+
+  .card-caption {
+    font-family: 'NeueHaasDisplayRoman', sans-serif;
+    font-size: 0.9rem;
+    color: #18181b;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  :global(.animate-on-scroll) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  :global(.animate-on-scroll.visible) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .gallery-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .gallery-left {
+      position: relative;
+      top: 0;
+    }
+
+    .arrow-container {
+      display: none;
+    }
+
+    .gallery-cards {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 
 <script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const section = document.querySelector('#gallery');
-		if (!section) return;
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.querySelectorAll('.animate-on-scroll').forEach((el, i) => { setTimeout(() => el.classList.add('animate-in'), i * 100); });
-					observer.unobserve(entry.target);
-				}
-			});
-		}, { threshold: 0.2 });
-		observer.observe(section);
+  const section = document.getElementById('gallery');
+  const arrowContainer = document.getElementById('gallery-arrow-container');
+  const arrowStem = document.getElementById('gallery-arrow-stem');
+  const arrowHead = document.getElementById('gallery-arrow-head');
+  const rightCol = document.querySelector('.gallery-cards');
 
-		const arrowStem = document.querySelector('#gallery-arrow-stem');
-		const arrowHead = document.querySelector('#gallery-arrow-head');
-		const arrowContainer = document.querySelector('#gallery .scroll-arrow');
-		function updateArrow() {
-			if (!arrowStem || !arrowHead || !section || !arrowContainer) return;
-			const rect = section.getBoundingClientRect();
-			const rightCol = document.querySelector('.gallery-cards');
-			const sh = rightCol ? rightCol.offsetHeight : section.offsetHeight, wh = window.innerHeight;
-			let p = 0;
-			if (rect.top <= wh && rect.bottom >= 0 && rect.top <= wh * 0.5) {
-				p = Math.min(1, Math.max(0, wh * 0.5 - rect.top) / (sh * 0.8));
-			}
-			const h = 120 + (p * (Math.min(1200, sh) - 120));
-			arrowContainer.style.height = `${h}px`;
-			const svg = arrowContainer.querySelector('svg');
-			if (svg) { svg.setAttribute('viewBox', `0 0 48 ${Math.max(42, h)}`); svg.style.height = `${h}px`; }
-			const stemEnd = 22 + (p * (h - 82));
-			arrowStem.setAttribute('d', `M24 12L24 ${stemEnd}`);
-			arrowHead.setAttribute('d', `M8 ${Math.max(12, stemEnd - 15)}L24 ${stemEnd}L40 ${Math.max(12, stemEnd - 15)}`);
-		}
-		window.addEventListener('scroll', updateArrow);
-		updateArrow();
-	});
+  function updateArrow() {
+    if (!arrowStem || !arrowHead || !section || !arrowContainer) return;
+    const rect = section.getBoundingClientRect();
+    const maxH = rightCol ? rightCol.offsetHeight - 40 : 400;
+    const wh = window.innerHeight;
+    let p = 0;
+    if (rect.top <= wh && rect.bottom >= 0 && rect.top <= wh * 0.5) {
+      p = Math.min(1, Math.max(0, wh * 0.5 - rect.top) / (maxH * 1.5));
+    }
+    const h = 80 + (p * (maxH - 80));
+    arrowContainer.style.height = h + 'px';
+    const svg = arrowContainer.querySelector('svg');
+    if (svg) {
+      svg.setAttribute('viewBox', '0 0 48 ' + Math.max(42, h));
+      svg.style.height = h + 'px';
+    }
+    const stemEnd = 22 + (p * (h - 60));
+    arrowStem.setAttribute('d', 'M24 12L24 ' + stemEnd);
+    arrowHead.setAttribute('d', 'M8 ' + Math.max(12, stemEnd - 12) + 'L24 ' + stemEnd + 'L40 ' + Math.max(12, stemEnd - 12));
+  }
+
+  window.addEventListener('scroll', updateArrow);
+  updateArrow();
+
+  // Animate on scroll observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.gallery-card.animate-on-scroll').forEach(el => observer.observe(el));
 </script>
