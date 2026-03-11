@@ -1,11 +1,11 @@
 ---
 const cases = [
-  { id: 1, caption: 'Crown Restoration' },
-  { id: 2, caption: 'Porcelain Veneers' },
-  { id: 3, caption: 'Bridge Fabrication' },
-  { id: 4, caption: 'Implant Restoration' },
-  { id: 5, caption: 'Custom Shade Match' },
-  { id: 6, caption: 'Full Denture' },
+  { id: 1, caption: 'Case 1', before: '/images/dental-before-1.jpg' },
+  { id: 2, caption: 'Case 2', before: '/images/dental-before-2.jpg' },
+  { id: 3, caption: 'Case 3', before: '/images/dental-before-3.jpg' },
+  { id: 4, caption: 'Case 4', before: '/images/dental-before-4.jpg' },
+  { id: 5, caption: 'Case 5', before: '/images/dental-before-5.jpg' },
+  { id: 6, caption: 'Case 6', before: '/images/dental-before-6.jpg' },
 ];
 ---
 
@@ -15,7 +15,7 @@ const cases = [
       <div class="gallery-left-content">
         <div class="gold-line"></div>
         <h2 class="gallery-title">see our work</h2>
-        <p class="gallery-subtitle">Precision craftsmanship visible in every restoration. Browse our before and after transformations.</p>
+        <p class="gallery-subtitle"><span class="gallery-typewriter-text"></span><span class="gallery-typewriter-cursor">|</span></p>
         <div class="arrow-container" id="gallery-arrow-container">
           <svg viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:48px;height:80px;">
             <path id="gallery-arrow-stem" d="M24 12L24 22" stroke="#C8A96E" stroke-width="2" stroke-linecap="round"/>
@@ -29,12 +29,12 @@ const cases = [
         <div class="gallery-card animate-on-scroll">
           <div class="card-images">
             <div class="card-img-wrap">
-              <img src={`/images/dental-before-${c.id}.jpg`} alt={`Before ${c.caption}`} loading="lazy" />
+              <img src={c.before} alt={`${c.caption} - Before`} loading="lazy" />
               <span class="img-label label-before">Before</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-img-wrap">
-              <img src={`/images/dental-after-${c.id}.jpg`} alt={`After ${c.caption}`} loading="lazy" />
+              <img src={`/images/dental-after-${c.id}.jpg`} alt={`${c.caption} - After`} loading="lazy" />
               <span class="img-label label-after">After</span>
             </div>
           </div>
@@ -85,6 +85,12 @@ const cases = [
     text-transform: lowercase;
     margin: 0 0 0.75rem 0;
     line-height: 1.1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .gallery-title:hover {
+    color: #C8A96E;
   }
 
   .gallery-subtitle {
@@ -93,6 +99,21 @@ const cases = [
     color: #52525b;
     line-height: 1.6;
     margin: 0 0 2rem 0;
+    min-height: 3.2rem;
+  }
+
+  .gallery-typewriter-cursor {
+    color: #C8A96E;
+    animation: galleryBlink 1s infinite;
+  }
+
+  .gallery-typewriter-cursor.hidden {
+    display: none;
+  }
+
+  @keyframes galleryBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
 
   .arrow-container {
@@ -132,14 +153,15 @@ const cases = [
   .card-img-wrap {
     flex: 1;
     position: relative;
-    height: 180px;
+    height: 200px;
     overflow: hidden;
   }
 
   .card-img-wrap img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
+    object-position: center center;
     transition: transform 0.4s;
   }
 
@@ -257,4 +279,30 @@ const cases = [
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.gallery-card.animate-on-scroll').forEach(el => observer.observe(el));
+
+  // Typewriter for subtitle - trigger on scroll entry
+  const galleryText = 'Precision craftsmanship visible in every restoration. Browse our before and after transformations.';
+  const galleryEl = document.querySelector('.gallery-typewriter-text');
+  const galleryCursor = document.querySelector('.gallery-typewriter-cursor');
+  if (galleryEl && section) {
+    const typeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          let i = 0;
+          const type = () => {
+            if (i < galleryText.length) {
+              galleryEl.textContent += galleryText[i];
+              i++;
+              setTimeout(type, 30);
+            } else if (galleryCursor) {
+              setTimeout(() => galleryCursor.classList.add('hidden'), 1000);
+            }
+          };
+          setTimeout(type, 300);
+          typeObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    typeObserver.observe(section);
+  }
 </script>

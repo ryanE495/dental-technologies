@@ -35,6 +35,10 @@ const services = [
         </div>
       ))}
     </div>
+
+    <div class="subtle-diamond"></div>
+    <div class="subtle-diamond-two"></div>
+    <div class="subtle-diamond-three"></div>
   </div>
 </section>
 
@@ -53,12 +57,14 @@ const services = [
     background: #efeeea;
     padding: 6rem 0 4rem 0;
     overflow: hidden;
+    position: relative;
   }
 
   .services-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 3rem;
@@ -68,6 +74,7 @@ const services = [
   .services-left {
     position: sticky;
     top: 6rem;
+    z-index: 1;
   }
 
   .services-left-inner {
@@ -87,6 +94,12 @@ const services = [
     color: #111827;
     margin: 0 0 0.75rem 0;
     text-transform: lowercase;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .services-title:hover {
+    color: #C8A96E;
   }
 
   .services-subtitle {
@@ -120,6 +133,8 @@ const services = [
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+    z-index: 1;
+    position: relative;
   }
 
   .service-card {
@@ -177,6 +192,60 @@ const services = [
     line-height: 1.5;
   }
 
+  .subtle-diamond {
+    position: absolute;
+    top: 15%;
+    right: -180px;
+    width: 250px;
+    height: 250px;
+    border: 2.5px solid rgba(200, 169, 110, 0.2);
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .subtle-diamond-two {
+    position: absolute;
+    bottom: 20%;
+    left: -120px;
+    width: 180px;
+    height: 180px;
+    border: 2.5px solid rgba(200, 169, 110, 0.15);
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .subtle-diamond-three {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    border: 2.5px solid rgba(200, 169, 110, 0.12);
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @media (max-width: 1200px) {
+    .subtle-diamond {
+      right: -200px;
+      width: 170px;
+      height: 170px;
+    }
+    .subtle-diamond-two {
+      left: -100px;
+      width: 120px;
+      height: 120px;
+    }
+    .subtle-diamond-three {
+      right: 3%;
+      width: 70px;
+      height: 70px;
+    }
+  }
+
   @media (max-width: 768px) {
     .services-container {
       grid-template-columns: 1fr;
@@ -197,19 +266,28 @@ const services = [
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Typewriter
+    // Typewriter - trigger on scroll entry
     const text = 'precision craftsmanship for every restoration';
     const el = document.querySelector('.typewriter-text');
-    if (el) {
-      let i = 0;
-      const type = () => {
-        if (i < text.length) {
-          el.textContent += text[i];
-          i++;
-          setTimeout(type, 50);
-        }
-      };
-      setTimeout(type, 500);
+    const servicesSection = document.getElementById('services');
+    if (el && servicesSection) {
+      const typeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            let i = 0;
+            const type = () => {
+              if (i < text.length) {
+                el.textContent += text[i];
+                i++;
+                setTimeout(type, 50);
+              }
+            };
+            setTimeout(type, 300);
+            typeObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      typeObserver.observe(servicesSection);
     }
 
     // Arrow

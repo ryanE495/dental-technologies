@@ -7,9 +7,7 @@
       <div class="left-text-block animate-on-scroll">
         <h2 class="section-title">find us</h2>
         <div class="gold-line"></div>
-        <p class="description">
-          We're located in a quiet residential area of Glenwood Springs, Colorado. Don't let the neighborhood fool you — behind our doors is a full-service dental laboratory equipped with the latest in digital and analog fabrication technology. If you're visiting for the first time, keep an eye out for our signage and feel free to call ahead for directions.
-        </p>
+        <p class="description"><span class="findus-typewriter-text"></span><span class="findus-typewriter-cursor">|</span></p>
       </div>
       <div class="arrow-container" id="findus-arrow-container">
         <svg viewBox="0 0 48 80" width="48" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -74,6 +72,10 @@
         </div>
       </div>
     </div>
+
+    <div class="subtle-diamond"></div>
+    <div class="subtle-diamond-two"></div>
+    <div class="subtle-diamond-three"></div>
   </div>
 </section>
 
@@ -82,12 +84,14 @@
     background: #efeeea;
     padding: 6rem 0 4rem 0;
     overflow: hidden;
+    position: relative;
   }
 
   .findus-grid {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 3rem;
@@ -113,6 +117,12 @@
     text-transform: lowercase;
     letter-spacing: -0.02em;
     margin: 0 0 1rem 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .section-title:hover {
+    color: #C8A96E;
   }
 
   .gold-line {
@@ -128,6 +138,21 @@
     line-height: 1.7;
     color: #6B7280;
     margin: 0;
+    min-height: 8rem;
+  }
+
+  .findus-typewriter-cursor {
+    color: #C8A96E;
+    animation: findusBlink 1s infinite;
+  }
+
+  .findus-typewriter-cursor.hidden {
+    display: none;
+  }
+
+  @keyframes findusBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
 
   .arrow-container {
@@ -261,6 +286,65 @@
     transform: translateY(0);
   }
 
+  .subtle-diamond {
+    position: absolute;
+    top: 15%;
+    right: -180px;
+    width: 250px;
+    height: 250px;
+    border: 2.5px solid rgba(200, 169, 110, 0.2);
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .subtle-diamond-two {
+    position: absolute;
+    bottom: 20%;
+    left: -120px;
+    width: 180px;
+    height: 180px;
+    border: 2.5px solid rgba(200, 169, 110, 0.15);
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .subtle-diamond-three {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    border: 2.5px solid rgba(200, 169, 110, 0.12);
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .right-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 1200px) {
+    .subtle-diamond {
+      right: -200px;
+      width: 170px;
+      height: 170px;
+    }
+    .subtle-diamond-two {
+      left: -100px;
+      width: 120px;
+      height: 120px;
+    }
+    .subtle-diamond-three {
+      right: 3%;
+      width: 70px;
+      height: 70px;
+    }
+  }
+
   /* Mobile */
   @media (max-width: 768px) {
     .findus-grid {
@@ -334,5 +418,31 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('#find-us .animate-on-scroll').forEach(el => observer.observe(el));
+
+    // Typewriter for description - trigger on scroll entry
+    const findusText = "We're located in a quiet residential area of Glenwood Springs, Colorado. Don't let the neighborhood fool you \u2014 behind our doors is a full-service dental laboratory equipped with the latest in digital and analog fabrication technology. If you're visiting for the first time, keep an eye out for our signage and feel free to call ahead for directions.";
+    const findusEl = document.querySelector('.findus-typewriter-text');
+    const findusCursor = document.querySelector('.findus-typewriter-cursor');
+    if (findusEl && section) {
+      const typeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            let i = 0;
+            const type = () => {
+              if (i < findusText.length) {
+                findusEl.textContent += findusText[i];
+                i++;
+                setTimeout(type, 20);
+              } else if (findusCursor) {
+                setTimeout(() => findusCursor.classList.add('hidden'), 1000);
+              }
+            };
+            setTimeout(type, 300);
+            typeObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      typeObserver.observe(section);
+    }
   });
 </script>
