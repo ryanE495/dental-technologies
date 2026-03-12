@@ -22,6 +22,10 @@
 							<img src="/images/dana.webp" alt="Dana Chiappinelli" />
 							<span class="team-name">Dana</span>
 						</div>
+						<div class="team-member">
+							<img src="https://bswmrfxdadcmuyhmsagv.supabase.co/storage/v1/object/public/portfolio-images/lisa.webp" alt="Lisa" />
+							<span class="team-name">Lisa</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -130,7 +134,7 @@
 
 	.team-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
 	}
 
@@ -253,8 +257,13 @@
 			margin-top: 3rem;
 		}
 
+		.team-grid {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1rem;
+		}
+
 		.team-member img {
-			height: 200px;
+			height: 180px;
 		}
 
 		.value-item {
