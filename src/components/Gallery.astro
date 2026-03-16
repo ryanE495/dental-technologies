@@ -9,7 +9,7 @@ const cases = [
 ];
 ---
 
-<section id="gallery" class="gallery-section">
+<section id="gallery" class="gallery-section has-texture">
   <div class="gallery-layout">
     <div class="gallery-left">
       <div class="gallery-left-content">
@@ -26,7 +26,7 @@ const cases = [
     </div>
     <div class="gallery-cards">
       {cases.map(c => (
-        <div class="gallery-card animate-on-scroll">
+        <div class="gallery-card animate-on-scroll precision-hover">
           <div class="card-images">
             <div class="card-img-wrap">
               <img src={c.before} alt={`${c.caption} - Before`} loading="lazy" />

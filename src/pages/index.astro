@@ -40,5 +40,37 @@ import Footer from '../components/Footer.astro';
 				}
 			});
 		});
+
+		// Subtle parallax on background squares
+		const squares = document.querySelectorAll('.subtle-square, .subtle-square-two, .subtle-square-three, .subtle-square-four');
+		if (squares.length > 0) {
+			window.addEventListener('scroll', function() {
+				const scrollY = window.scrollY;
+				squares.forEach((sq, i) => {
+					const speed = 0.03 + (i * 0.01);
+					(sq as HTMLElement).style.transform = 'translateY(' + (scrollY * -speed) + 'px)';
+				});
+			}, { passive: true });
+		}
+
+		// Accent line draw-in on scroll
+		const accentLines = document.querySelectorAll('.accent-line, .gold-line');
+		if (accentLines.length > 0) {
+			const lineObserver = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						(entry.target as HTMLElement).style.transition = 'width 0.8s ease';
+						(entry.target as HTMLElement).style.width = getComputedStyle(entry.target).maxWidth || '48px';
+						entry.target.classList.add('line-drawn');
+					}
+				});
+			}, { threshold: 0.5 });
+			accentLines.forEach(line => {
+				const computedWidth = getComputedStyle(line).width;
+				(line as HTMLElement).dataset.fullWidth = computedWidth;
+				(line as HTMLElement).style.width = '0';
+				lineObserver.observe(line);
+			});
+		}
 	});
 </script>

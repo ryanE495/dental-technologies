@@ -1,7 +1,7 @@
 ---
 ---
 
-<section id="about" class="about section-padding">
+<section id="about" class="about section-padding has-texture has-tooth-watermark">
 	<div class="container">
 		<div class="about-content">
 			<div class="section-content">
@@ -55,6 +55,13 @@
 	.about {
 		background-color: #efeeea;
 		padding: 8rem 0 4rem 0;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.about::after {
+		right: -60px;
+		top: 20%;
 	}
 
 	.container {

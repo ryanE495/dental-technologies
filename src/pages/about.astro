@@ -9,7 +9,7 @@ import Footer from '../components/Footer.astro';
   <main>
 
     <!-- Hero Section -->
-    <section class="about-hero">
+    <section class="about-hero has-texture">
       <div class="container">
         <div class="hero-content">
           <span class="hero-label hero-load" data-delay="0">ABOUT US</span>
@@ -29,7 +29,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Story Section -->
-    <section class="story-section">
+    <section class="story-section has-texture has-tooth-watermark">
       <div class="story-layout">
         <div class="story-left">
           <div class="story-left-inner">
@@ -86,7 +86,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="team-right">
-          <div class="team-card scroll-reveal" data-reveal-delay="0">
+          <div class="team-card scroll-reveal precision-hover" data-reveal-delay="0">
             <div class="team-photo-wrapper">
               <img src="/images/jeanette.webp" alt="Jeanette Chiappinelli" loading="lazy" />
             </div>
@@ -96,7 +96,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
 
-          <div class="team-card scroll-reveal" data-reveal-delay="150">
+          <div class="team-card scroll-reveal precision-hover" data-reveal-delay="150">
             <div class="team-photo-wrapper">
               <img src="/images/dana.webp" alt="Dana" loading="lazy" />
             </div>
@@ -106,7 +106,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
 
-          <div class="team-card scroll-reveal" data-reveal-delay="300">
+          <div class="team-card scroll-reveal precision-hover" data-reveal-delay="300">
             <div class="team-photo-wrapper">
               <img src="https://bswmrfxdadcmuyhmsagv.supabase.co/storage/v1/object/public/portfolio-images/lisa.webp" alt="Lisa" loading="lazy" />
             </div>
@@ -120,7 +120,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Values Section -->
-    <section class="values-section">
+    <section class="values-section has-texture">
       <div class="values-layout">
         <div class="values-left">
           <div class="values-left-inner">
@@ -278,6 +278,11 @@ import Footer from '../components/Footer.astro';
     padding: 6rem 0;
     overflow: hidden;
     position: relative;
+  }
+
+  .story-section::after {
+    right: -60px;
+    top: 15%;
   }
 
   .story-layout {
@@ -920,6 +925,38 @@ import Footer from '../components/Footer.astro';
         });
       }, { threshold: 0.3 });
       obs.observe(section);
+    }
+
+    // Subtle parallax on background squares
+    const squares = document.querySelectorAll('.subtle-square');
+    if (squares.length > 0) {
+      window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        squares.forEach((sq, i) => {
+          const speed = 0.03 + (i * 0.008);
+          (sq as HTMLElement).style.transform = 'translateY(' + (scrollY * -speed) + 'px)';
+        });
+      }, { passive: true });
+    }
+
+    // Accent line draw-in on scroll
+    const accentLines = document.querySelectorAll('.accent-line');
+    if (accentLines.length > 0) {
+      const lineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            el.style.transition = 'width 0.8s ease';
+            el.style.width = el.dataset.fullWidth || '48px';
+          }
+        });
+      }, { threshold: 0.5 });
+      accentLines.forEach(line => {
+        const el = line as HTMLElement;
+        el.dataset.fullWidth = getComputedStyle(line).width;
+        el.style.width = '0';
+        lineObserver.observe(line);
+      });
     }
 
     // Scroll arrows

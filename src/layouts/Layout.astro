@@ -68,6 +68,57 @@ const { title, description = "Dental Technologies Lab — precision craftsmanshi
 		scroll-behavior: smooth;
 	}
 
+	/* Linen texture overlay on cream sections */
+	.has-texture::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23efeeea'/%3E%3Crect width='1' height='1' x='0' y='0' fill='%23e8e7e2' fill-opacity='0.4'/%3E%3Crect width='1' height='1' x='2' y='2' fill='%23e8e7e2' fill-opacity='0.3'/%3E%3C/svg%3E");
+		background-repeat: repeat;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.has-texture > * {
+		position: relative;
+		z-index: 1;
+	}
+
+	/* Custom crosshair cursor for precision elements */
+	.precision-hover:hover {
+		cursor: crosshair;
+	}
+
+	/* Tooth watermark */
+	.has-tooth-watermark {
+		position: relative;
+	}
+
+	.has-tooth-watermark::after {
+		content: '';
+		position: absolute;
+		width: 280px;
+		height: 380px;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'%3E%3Cpath d='M12 2C8.5 2 5.5 4.5 5 8c-.3 2 .2 4 1 5.5.5 1 .8 2 .7 3l-.7 8c-.2 2 1.2 3.5 3 3.5 1.2 0 2-.6 2.5-1.5L12 25l.5 1.5c.5.9 1.3 1.5 2.5 1.5 1.8 0 3.2-1.5 3-3.5l-.7-8c-.1-1 .2-2 .7-3 .8-1.5 1.3-3.5 1-5.5C18.5 4.5 15.5 2 12 2z' fill='%23437eae' fill-opacity='0.025'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-size: contain;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	/* Accent line draw-in animation */
+	.accent-line-animate {
+		width: 0;
+		transition: width 0.8s ease;
+	}
+
+	.accent-line-animate.drawn {
+		width: 48px;
+	}
+
 	::-webkit-scrollbar {
 		width: 6px;
 	}
