@@ -1,0 +1,901 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About Us — Dental Technologies Lab" description="Meet the team behind Dental Technologies Lab. Decades of expertise in precision dental restorations, serving practices across Colorado from Glenwood Springs.">
+  <Header />
+  <main>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-label animate-on-scroll">ABOUT US</span>
+          <h1 class="hero-title animate-on-scroll">
+            <span class="line">crafted by hand,</span>
+            <span class="line accent">perfected by <span class="blue">experience</span></span>
+          </h1>
+          <p class="hero-description animate-on-scroll">
+            For over two decades, Dental Technologies Lab has been the trusted partner for dental practices that demand precision, quality, and artistry in every restoration.
+          </p>
+        </div>
+      </div>
+      <div class="subtle-square sq-1"></div>
+      <div class="subtle-square sq-2"></div>
+      <div class="subtle-square sq-3"></div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+      <div class="story-layout">
+        <div class="story-left">
+          <div class="story-left-inner">
+            <div class="accent-line"></div>
+            <h2 class="section-title">our story</h2>
+            <p class="section-subtitle">
+              <span class="typewriter-text" id="story-typewriter"></span><span class="typewriter-cursor">|</span>
+            </p>
+            <div class="arrow-container" id="story-arrow-container">
+              <svg viewBox="0 0 48 80" width="48" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="story-arrow-stem" d="M24 12L24 22" stroke="#437eae" stroke-width="2" stroke-linecap="round"/>
+                <path id="story-arrow-head" d="M8 12L24 22L40 12" stroke="#437eae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="story-right">
+          <div class="story-block animate-on-scroll">
+            <span class="block-number">01</span>
+            <h3>Where it began</h3>
+            <p>What started as a small bench operation has grown into a full-service dental laboratory equipped with the latest in digital and analog fabrication technology. Our founder, Jeanette, built this lab on a simple principle: every restoration should be treated as if it's going into your own mouth.</p>
+          </div>
+          <div class="story-block animate-on-scroll">
+            <span class="block-number">02</span>
+            <h3>How we work</h3>
+            <p>We combine advanced CAD/CAM technology with traditional handcrafting techniques. Digital precision meets artistic touch — because the best restorations aren't just technically accurate, they're indistinguishable from natural teeth.</p>
+          </div>
+          <div class="story-block animate-on-scroll">
+            <span class="block-number">03</span>
+            <h3>Why practices trust us</h3>
+            <p>Consistency. When you send a case to our lab, you know exactly what you're getting back: a restoration that fits right the first time, matches the shade perfectly, and makes your patient smile. No surprises, no remakes, no excuses.</p>
+          </div>
+        </div>
+      </div>
+      <div class="subtle-square sq-4"></div>
+      <div class="subtle-square sq-5"></div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="team-layout">
+        <div class="team-header">
+          <div class="accent-line"></div>
+          <h2 class="section-title animate-on-scroll">meet the team</h2>
+          <p class="team-intro animate-on-scroll">Three technicians. Decades of combined experience. One shared obsession with getting it right.</p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card animate-on-scroll">
+            <div class="team-photo-wrapper">
+              <img src="/images/jeanette.webp" alt="Jeanette Chiappinelli — Founder & Lead Technician" loading="lazy" />
+              <div class="photo-overlay">
+                <span class="overlay-role">founder & lead technician</span>
+              </div>
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Jeanette</h3>
+              <span class="team-role">Founder & Lead Technician</span>
+              <p class="team-bio">The hands behind the lab. Jeanette has spent over 20 years perfecting the art of dental restoration — from hand-layered porcelain veneers to complex implant cases. Her eye for shade matching and natural aesthetics is what sets DTL apart.</p>
+            </div>
+          </div>
+
+          <div class="team-card animate-on-scroll">
+            <div class="team-photo-wrapper">
+              <img src="/images/dana.webp" alt="Dana — Senior Technician" loading="lazy" />
+              <div class="photo-overlay">
+                <span class="overlay-role">senior technician</span>
+              </div>
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Dana</h3>
+              <span class="team-role">Senior Technician</span>
+              <p class="team-bio">Detail-oriented and meticulous, Dana specializes in CAD/CAM design and full-contour zirconia restorations. She brings digital precision to every case, ensuring margins are clean and contacts are spot-on.</p>
+            </div>
+          </div>
+
+          <div class="team-card animate-on-scroll">
+            <div class="team-photo-wrapper">
+              <img src="https://bswmrfxdadcmuyhmsagv.supabase.co/storage/v1/object/public/portfolio-images/lisa.webp" alt="Lisa — Technician" loading="lazy" />
+              <div class="photo-overlay">
+                <span class="overlay-role">technician</span>
+              </div>
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Lisa</h3>
+              <span class="team-role">Technician</span>
+              <p class="team-bio">Lisa rounds out the team with her expertise in dentures, partials, and removable prosthetics. Her attention to gingival characterization and tooth arrangement gives every case a natural, lifelike quality.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+      <div class="values-layout">
+        <div class="values-left">
+          <div class="values-left-inner">
+            <div class="accent-line"></div>
+            <h2 class="section-title">what drives us</h2>
+            <p class="section-subtitle">
+              <span class="typewriter-text" id="values-typewriter"></span><span class="typewriter-cursor">|</span>
+            </p>
+            <div class="arrow-container" id="values-arrow-container">
+              <svg viewBox="0 0 48 80" width="48" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="values-arrow-stem" d="M24 12L24 22" stroke="#437eae" stroke-width="2" stroke-linecap="round"/>
+                <path id="values-arrow-head" d="M8 12L24 22L40 12" stroke="#437eae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="values-right">
+          <div class="value-card animate-on-scroll">
+            <div class="value-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="20" stroke="#437eae" stroke-width="1.5"/>
+                <path d="M24 14v10l7 4" stroke="#437eae" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="value-content">
+              <h3>precision over speed</h3>
+              <p>We don't rush restorations out the door. Every case gets the time it needs — because a remake costs everyone more than doing it right the first time.</p>
+            </div>
+          </div>
+          <div class="value-card animate-on-scroll">
+            <div class="value-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z" stroke="#437eae" stroke-width="1.5"/>
+                <path d="M16 24l5 5 11-11" stroke="#437eae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="value-content">
+              <h3>quality materials only</h3>
+              <p>We source premium ceramics, zirconia, and alloys from trusted manufacturers. No shortcuts, no off-brand substitutes. Your patients deserve materials that last.</p>
+            </div>
+          </div>
+          <div class="value-card animate-on-scroll">
+            <div class="value-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 4l6 12h13l-10 8 4 13-13-9-13 9 4-13L5 16h13z" stroke="#437eae" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="value-content">
+              <h3>partnership, not transactions</h3>
+              <p>We're not a faceless mail-order lab. We pick up the phone. We discuss cases. We build relationships with the practices we serve — because great dentistry is a team effort.</p>
+            </div>
+          </div>
+          <div class="value-card animate-on-scroll">
+            <div class="value-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="8" width="32" height="32" rx="4" stroke="#437eae" stroke-width="1.5"/>
+                <path d="M18 20h12M18 28h8" stroke="#437eae" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="value-content">
+              <h3>transparency always</h3>
+              <p>Clear turnaround times, honest communication about materials and methods, and no hidden fees. You'll always know exactly where your case stands.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="subtle-square sq-6"></div>
+      <div class="subtle-square sq-7"></div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content animate-on-scroll">
+          <h2>ready to partner with us?</h2>
+          <p>Send us your first case and see the difference precision craftsmanship makes.</p>
+          <a href="/#contact" class="cta-button">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* ===== HERO ===== */
+  .about-hero {
+    background: #efeeea;
+    padding: 10rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-family: 'NeueHaasDisplayMedium', 'Inter', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #437eae;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .hero-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1.25rem;
+    height: 1px;
+    background: #437eae;
+  }
+
+  .hero-title {
+    font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: #111827;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title .line {
+    display: block;
+  }
+
+  .hero-title .blue {
+    color: #437eae;
+  }
+
+  .hero-description {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #6B7280;
+    max-width: 600px;
+  }
+
+  /* ===== STORY ===== */
+  .story-section {
+    background: #efeeea;
+    padding: 6rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .story-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .story-left {
+    position: relative;
+    overflow: visible;
+  }
+
+  .story-left-inner {
+    position: sticky;
+    top: 8rem;
+  }
+
+  .accent-line {
+    width: 48px;
+    height: 2px;
+    background: #437eae;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #111827;
+    text-transform: lowercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+    cursor: default;
+  }
+
+  .section-title:hover {
+    color: #437eae;
+  }
+
+  .section-subtitle {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #6B7280;
+    margin-bottom: 2rem;
+  }
+
+  .typewriter-cursor {
+    color: #437eae;
+    animation: blink 1s infinite;
+  }
+
+  .typewriter-cursor.hidden {
+    display: none;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .arrow-container {
+    position: absolute;
+    top: 100%;
+    left: 1.5rem;
+    width: 48px;
+    height: 80px;
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible;
+  }
+
+  .arrow-container svg {
+    display: block;
+  }
+
+  .story-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .story-block {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgba(67, 126, 174, 0.12);
+    transition: all 0.3s ease;
+  }
+
+  .story-block:last-child {
+    border-bottom: none;
+  }
+
+  .story-block:hover {
+    padding-left: 1rem;
+  }
+
+  .story-block:hover .block-number {
+    color: #437eae;
+  }
+
+  .block-number {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #9CA3AF;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+  }
+
+  .story-block h3 {
+    font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    text-transform: lowercase;
+  }
+
+  .story-block p {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #6B7280;
+  }
+
+  /* ===== TEAM ===== */
+  .team-section {
+    background: #111827;
+    padding: 6rem 0;
+    overflow: hidden;
+  }
+
+  .team-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .team-header {
+    margin-bottom: 4rem;
+  }
+
+  .team-header .accent-line {
+    background: #437eae;
+  }
+
+  .team-header .section-title {
+    color: #fff;
+  }
+
+  .team-header .section-title:hover {
+    color: #437eae;
+  }
+
+  .team-intro {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #9CA3AF;
+    max-width: 500px;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .team-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.4s ease;
+    overflow: hidden;
+  }
+
+  .team-card:hover {
+    border-color: rgba(67, 126, 174, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .team-photo-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 320px;
+  }
+
+  .team-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(40%);
+    transition: all 0.5s ease;
+  }
+
+  .team-card:hover .team-photo-wrapper img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+  }
+
+  .photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .team-card:hover .photo-overlay {
+    opacity: 1;
+  }
+
+  .overlay-role {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #437eae;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+  }
+
+  .team-info {
+    padding: 1.75rem;
+  }
+
+  .team-name {
+    font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 0.25rem;
+    text-transform: lowercase;
+  }
+
+  .team-role {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #437eae;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .team-bio {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #9CA3AF;
+  }
+
+  /* ===== VALUES ===== */
+  .values-section {
+    background: #efeeea;
+    padding: 6rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .values-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .values-left {
+    position: relative;
+    overflow: visible;
+  }
+
+  .values-left-inner {
+    position: sticky;
+    top: 8rem;
+  }
+
+  .values-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .value-card {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(67, 126, 174, 0.12);
+    transition: all 0.3s ease;
+    align-items: flex-start;
+  }
+
+  .value-card:last-child {
+    border-bottom: none;
+  }
+
+  .value-card:hover {
+    padding-left: 1rem;
+  }
+
+  .value-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  .value-card:hover .value-icon {
+    opacity: 1;
+  }
+
+  .value-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .value-content h3 {
+    font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    text-transform: lowercase;
+  }
+
+  .value-content p {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #6B7280;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    background: #111827;
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: lowercase;
+  }
+
+  .cta-content p {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #9CA3AF;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-button {
+    display: inline-block;
+    font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #111827;
+    background: #fff;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: transparent;
+    color: #437eae;
+    border-color: #437eae;
+  }
+
+  /* ===== SQUARES ===== */
+  .subtle-square {
+    position: absolute;
+    border: 2px solid rgba(67, 126, 174, 0.12);
+    pointer-events: none;
+    transform: rotate(0deg);
+  }
+
+  .sq-1 {
+    width: 250px;
+    height: 250px;
+    top: 15%;
+    right: -80px;
+    opacity: 0.8;
+  }
+
+  .sq-2 {
+    width: 180px;
+    height: 180px;
+    bottom: 10%;
+    right: 60px;
+    opacity: 0.5;
+  }
+
+  .sq-3 {
+    width: 120px;
+    height: 120px;
+    top: 30%;
+    right: 200px;
+    opacity: 0.3;
+  }
+
+  .sq-4 {
+    width: 200px;
+    height: 200px;
+    top: -40px;
+    right: -60px;
+    opacity: 0.5;
+  }
+
+  .sq-5 {
+    width: 140px;
+    height: 140px;
+    bottom: 30px;
+    left: -40px;
+    opacity: 0.3;
+  }
+
+  .sq-6 {
+    width: 220px;
+    height: 220px;
+    top: 20%;
+    right: -70px;
+    opacity: 0.5;
+  }
+
+  .sq-7 {
+    width: 150px;
+    height: 150px;
+    bottom: -30px;
+    right: 100px;
+    opacity: 0.3;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 1024px) {
+    .story-layout,
+    .values-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .story-left-inner,
+    .values-left-inner {
+      position: relative;
+      top: auto;
+    }
+
+    .arrow-container {
+      display: none;
+    }
+
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-hero {
+      padding: 8rem 0 4rem;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+    }
+
+    .story-section,
+    .values-section {
+      padding: 4rem 0;
+    }
+
+    .team-section {
+      padding: 4rem 0;
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .team-photo-wrapper {
+      height: 280px;
+    }
+
+    .story-block:hover,
+    .value-card:hover {
+      padding-left: 0;
+    }
+
+    .cta-section {
+      padding: 4rem 0;
+    }
+
+    .subtle-square {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Scroll-triggered animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // Typewriter for story section
+    const storyText = "it started with a single bench and a commitment to doing things the right way.";
+    initTypewriter('story-typewriter', storyText, '.story-section');
+
+    // Typewriter for values section
+    const valuesText = "the principles that guide every restoration we craft.";
+    initTypewriter('values-typewriter', valuesText, '.values-section');
+
+    function initTypewriter(id: string, text: string, sectionSelector: string) {
+      const el = document.getElementById(id);
+      const section = document.querySelector(sectionSelector);
+      const cursor = el?.parentElement?.querySelector('.typewriter-cursor');
+      if (!el || !section) return;
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            let i = 0;
+            const type = () => {
+              if (i < text.length) {
+                el.textContent += text[i];
+                i++;
+                setTimeout(type, 35);
+              } else if (cursor) {
+                setTimeout(() => cursor.classList.add('hidden'), 1000);
+              }
+            };
+            setTimeout(type, 300);
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(section);
+    }
+
+    // Scroll arrows
+    setupArrow('story', '.story-section', '.story-right');
+    setupArrow('values', '.values-section', '.values-right');
+
+    function setupArrow(id: string, sectionSel: string, rightSel: string) {
+      const section = document.querySelector(sectionSel) as HTMLElement;
+      const container = document.getElementById(`${id}-arrow-container`) as HTMLElement;
+      const stem = document.getElementById(`${id}-arrow-stem`);
+      const head = document.getElementById(`${id}-arrow-head`);
+      const rightCol = document.querySelector(rightSel) as HTMLElement;
+
+      if (!section || !container || !stem || !head) return;
+
+      function update() {
+        const rect = section.getBoundingClientRect();
+        const maxH = rightCol ? rightCol.offsetHeight - 40 : 400;
+        const wh = window.innerHeight;
+        let p = 0;
+        if (rect.top <= wh && rect.bottom >= 0 && rect.top <= wh * 0.5) {
+          p = Math.min(1, Math.max(0, (wh * 0.5 - rect.top) / (maxH * 1.5)));
+        }
+        const h = 80 + (p * (maxH - 80));
+        container.style.height = h + 'px';
+        const svg = container.querySelector('svg');
+        if (svg) {
+          svg.setAttribute('viewBox', '0 0 48 ' + Math.max(42, h));
+          svg.style.height = h + 'px';
+        }
+        const stemEnd = 22 + (p * (h - 60));
+        stem.setAttribute('d', 'M24 12L24 ' + stemEnd);
+        head.setAttribute('d', 'M8 ' + Math.max(12, stemEnd - 12) + 'L24 ' + stemEnd + 'L40 ' + Math.max(12, stemEnd - 12));
+      }
+
+      window.addEventListener('scroll', update);
+      update();
+    }
+  });
+</script>
