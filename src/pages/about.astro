@@ -87,7 +87,7 @@ import Footer from '../components/Footer.astro';
             </div>
             <div class="team-info">
               <h3 class="team-name">Jeanette</h3>
-              <span class="team-role">Founder & Lead Technician</span>
+              <!-- <span class="team-role">Founder & Lead Technician</span> -->
               <p class="team-bio">The hands behind the lab. Jeanette has spent over 20 years perfecting the art of dental restoration — from hand-layered porcelain veneers to complex implant cases. Her eye for shade matching and natural aesthetics is what sets DTL apart.</p>
             </div>
           </div>
@@ -101,7 +101,7 @@ import Footer from '../components/Footer.astro';
             </div>
             <div class="team-info">
               <h3 class="team-name">Dana</h3>
-              <span class="team-role">Senior Technician</span>
+              <!-- <span class="team-role">Senior Technician</span> -->
               <p class="team-bio">Detail-oriented and meticulous, Dana specializes in CAD/CAM design and full-contour zirconia restorations. She brings digital precision to every case, ensuring margins are clean and contacts are spot-on.</p>
             </div>
           </div>
@@ -115,7 +115,7 @@ import Footer from '../components/Footer.astro';
             </div>
             <div class="team-info">
               <h3 class="team-name">Lisa</h3>
-              <span class="team-role">Technician</span>
+              <!-- <span class="team-role">Technician</span> -->
               <p class="team-bio">Lisa rounds out the team with her expertise in dentures, partials, and removable prosthetics. Her attention to gingival characterization and tooth arrangement gives every case a natural, lifelike quality.</p>
             </div>
           </div>
@@ -319,7 +319,7 @@ import Footer from '../components/Footer.astro';
     text-transform: lowercase;
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
     cursor: default;
   }
 
@@ -373,7 +373,7 @@ import Footer from '../components/Footer.astro';
   .story-block {
     padding: 2.5rem 0;
     border-bottom: 1px solid rgba(67, 126, 174, 0.12);
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .story-block:last-child {
@@ -381,13 +381,12 @@ import Footer from '../components/Footer.astro';
   }
 
   .story-block:hover {
-    padding-left: 1.5rem;
-    border-bottom-color: rgba(67, 126, 174, 0.3);
+    padding-left: 1rem;
+    border-bottom-color: rgba(67, 126, 174, 0.2);
   }
 
   .story-block:hover .block-number {
     color: #437eae;
-    transform: translateX(4px);
   }
 
   .story-block:hover h3 {
@@ -395,7 +394,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .story-block h3 {
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
   }
 
   .block-number {
@@ -405,7 +404,7 @@ import Footer from '../components/Footer.astro';
     letter-spacing: 0.15em;
     display: block;
     margin-bottom: 0.75rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.5s ease;
   }
 
   .story-block h3 {
@@ -470,14 +469,14 @@ import Footer from '../components/Footer.astro';
   .team-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    transition: all 0.4s ease;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow: hidden;
   }
 
   .team-card:hover {
-    border-color: rgba(67, 126, 174, 0.3);
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(67, 126, 174, 0.1);
+    border-color: rgba(67, 126, 174, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   }
 
   .team-photo-wrapper {
@@ -491,13 +490,13 @@ import Footer from '../components/Footer.astro';
     height: 100%;
     object-fit: cover;
     object-position: top;
-    filter: grayscale(40%);
-    transition: all 0.5s ease;
+    filter: grayscale(30%);
+    transition: filter 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .team-card:hover .team-photo-wrapper img {
     filter: grayscale(0%);
-    transform: scale(1.03);
+    transform: scale(1.02);
   }
 
   .photo-overlay {
@@ -506,9 +505,9 @@ import Footer from '../components/Footer.astro';
     left: 0;
     right: 0;
     padding: 1.5rem;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.8s ease;
   }
 
   .team-card:hover .photo-overlay {
@@ -592,7 +591,7 @@ import Footer from '../components/Footer.astro';
     gap: 1.5rem;
     padding: 2rem 0;
     border-bottom: 1px solid rgba(67, 126, 174, 0.12);
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     align-items: flex-start;
   }
 
@@ -601,8 +600,8 @@ import Footer from '../components/Footer.astro';
   }
 
   .value-card:hover {
-    padding-left: 1.5rem;
-    border-bottom-color: rgba(67, 126, 174, 0.3);
+    padding-left: 1rem;
+    border-bottom-color: rgba(67, 126, 174, 0.2);
   }
 
   .value-card:hover h3 {
@@ -610,20 +609,20 @@ import Footer from '../components/Footer.astro';
   }
 
   .value-content h3 {
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
   }
 
   .value-icon {
     flex-shrink: 0;
     width: 48px;
     height: 48px;
-    opacity: 0.6;
-    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.5;
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .value-card:hover .value-icon {
-    opacity: 1;
-    transform: scale(1.15) rotate(5deg);
+    opacity: 0.85;
+    transform: scale(1.08);
   }
 
   .value-icon svg {
@@ -687,13 +686,15 @@ import Footer from '../components/Footer.astro';
     transition: all 0.3s ease;
   }
 
+  .cta-button {
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
   .cta-button:hover {
     background: transparent;
     color: #437eae;
     border-color: #437eae;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(67, 126, 174, 0.2);
-    letter-spacing: 0.15em;
   }
 
   /* ===== SQUARES ===== */
@@ -813,32 +814,15 @@ import Footer from '../components/Footer.astro';
   /* Hero hover effects */
   .hero-title .line {
     display: block;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .hero-title:hover .line:first-child {
-    transform: translateX(8px);
-  }
-
-  .hero-title:hover .line:last-child {
-    transform: translateX(-8px);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .hero-title .blue {
-    transition: text-shadow 0.4s ease, letter-spacing 0.4s ease;
+    transition: color 0.6s ease;
   }
 
   .hero-title:hover .blue {
-    text-shadow: 0 0 30px rgba(67, 126, 174, 0.3);
-    letter-spacing: 0.02em;
-  }
-
-  .hero-label {
-    transition: letter-spacing 0.4s ease, color 0.4s ease;
-  }
-
-  .hero-label:hover {
-    letter-spacing: 0.35em;
+    color: #5a9fd4;
   }
 
   /* ===== SCROLL REVEAL ANIMATIONS ===== */
