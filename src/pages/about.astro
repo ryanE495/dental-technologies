@@ -12,14 +12,15 @@ import Footer from '../components/Footer.astro';
     <section class="about-hero">
       <div class="container">
         <div class="hero-content">
-          <span class="hero-label animate-on-scroll">ABOUT US</span>
-          <h1 class="hero-title animate-on-scroll">
-            <span class="line">crafted by hand,</span>
-            <span class="line accent">perfected by <span class="blue">experience</span></span>
+          <span class="hero-label hero-load" data-delay="0">ABOUT US</span>
+          <h1 class="hero-title">
+            <span class="line hero-load" data-delay="1">crafted by hand,</span>
+            <span class="line hero-load" data-delay="2">perfected by <span class="blue">experience</span></span>
           </h1>
-          <p class="hero-description animate-on-scroll">
+          <p class="hero-description hero-load" data-delay="3">
             For over two decades, Dental Technologies Lab has been the trusted partner for dental practices that demand precision, quality, and artistry in every restoration.
           </p>
+          <div class="hero-line hero-load" data-delay="4"></div>
         </div>
       </div>
       <div class="subtle-square sq-1"></div>
@@ -46,17 +47,17 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div class="story-right">
-          <div class="story-block animate-on-scroll">
+          <div class="story-block scroll-reveal" data-reveal-delay="0">
             <span class="block-number">01</span>
             <h3>Where it began</h3>
             <p>What started as a small bench operation has grown into a full-service dental laboratory equipped with the latest in digital and analog fabrication technology. Our founder, Jeanette, built this lab on a simple principle: every restoration should be treated as if it's going into your own mouth.</p>
           </div>
-          <div class="story-block animate-on-scroll">
+          <div class="story-block scroll-reveal" data-reveal-delay="150">
             <span class="block-number">02</span>
             <h3>How we work</h3>
             <p>We combine advanced CAD/CAM technology with traditional handcrafting techniques. Digital precision meets artistic touch — because the best restorations aren't just technically accurate, they're indistinguishable from natural teeth.</p>
           </div>
-          <div class="story-block animate-on-scroll">
+          <div class="story-block scroll-reveal" data-reveal-delay="300">
             <span class="block-number">03</span>
             <h3>Why practices trust us</h3>
             <p>Consistency. When you send a case to our lab, you know exactly what you're getting back: a restoration that fits right the first time, matches the shade perfectly, and makes your patient smile. No surprises, no remakes, no excuses.</p>
@@ -72,12 +73,12 @@ import Footer from '../components/Footer.astro';
       <div class="team-layout">
         <div class="team-header">
           <div class="accent-line"></div>
-          <h2 class="section-title animate-on-scroll">meet the team</h2>
-          <p class="team-intro animate-on-scroll">Three technicians. Decades of combined experience. One shared obsession with getting it right.</p>
+          <h2 class="section-title scroll-reveal" data-reveal-delay="0">meet the team</h2>
+          <p class="team-intro scroll-reveal" data-reveal-delay="150">Three technicians. Decades of combined experience. One shared obsession with getting it right.</p>
         </div>
 
         <div class="team-grid">
-          <div class="team-card animate-on-scroll">
+          <div class="team-card scroll-reveal" data-reveal-delay="0">
             <div class="team-photo-wrapper">
               <img src="/images/jeanette.webp" alt="Jeanette Chiappinelli — Founder & Lead Technician" loading="lazy" />
               <div class="photo-overlay">
@@ -91,7 +92,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
 
-          <div class="team-card animate-on-scroll">
+          <div class="team-card scroll-reveal" data-reveal-delay="200">
             <div class="team-photo-wrapper">
               <img src="/images/dana.webp" alt="Dana — Senior Technician" loading="lazy" />
               <div class="photo-overlay">
@@ -105,7 +106,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
 
-          <div class="team-card animate-on-scroll">
+          <div class="team-card scroll-reveal" data-reveal-delay="400">
             <div class="team-photo-wrapper">
               <img src="https://bswmrfxdadcmuyhmsagv.supabase.co/storage/v1/object/public/portfolio-images/lisa.webp" alt="Lisa — Technician" loading="lazy" />
               <div class="photo-overlay">
@@ -141,7 +142,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div class="values-right">
-          <div class="value-card animate-on-scroll">
+          <div class="value-card scroll-reveal" data-reveal-delay="450" data-reveal-delay="300" data-reveal-delay="150" data-reveal-delay="0">
             <div class="value-icon">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="24" cy="24" r="20" stroke="#437eae" stroke-width="1.5"/>
@@ -153,7 +154,7 @@ import Footer from '../components/Footer.astro';
               <p>We don't rush restorations out the door. Every case gets the time it needs — because a remake costs everyone more than doing it right the first time.</p>
             </div>
           </div>
-          <div class="value-card animate-on-scroll">
+          <div class="value-card scroll-reveal">
             <div class="value-icon">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z" stroke="#437eae" stroke-width="1.5"/>
@@ -165,7 +166,7 @@ import Footer from '../components/Footer.astro';
               <p>We source premium ceramics, zirconia, and alloys from trusted manufacturers. No shortcuts, no off-brand substitutes. Your patients deserve materials that last.</p>
             </div>
           </div>
-          <div class="value-card animate-on-scroll">
+          <div class="value-card scroll-reveal">
             <div class="value-icon">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24 4l6 12h13l-10 8 4 13-13-9-13 9 4-13L5 16h13z" stroke="#437eae" stroke-width="1.5" stroke-linejoin="round"/>
@@ -176,7 +177,7 @@ import Footer from '../components/Footer.astro';
               <p>We're not a faceless mail-order lab. We pick up the phone. We discuss cases. We build relationships with the practices we serve — because great dentistry is a team effort.</p>
             </div>
           </div>
-          <div class="value-card animate-on-scroll">
+          <div class="value-card scroll-reveal">
             <div class="value-icon">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="8" y="8" width="32" height="32" rx="4" stroke="#437eae" stroke-width="1.5"/>
@@ -197,7 +198,7 @@ import Footer from '../components/Footer.astro';
     <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
-        <div class="cta-content animate-on-scroll">
+        <div class="cta-content scroll-reveal" data-reveal-delay="0">
           <h2>ready to partner with us?</h2>
           <p>Send us your first case and see the difference precision craftsmanship makes.</p>
           <a href="/#contact" class="cta-button">Get In Touch</a>
@@ -380,11 +381,21 @@ import Footer from '../components/Footer.astro';
   }
 
   .story-block:hover {
-    padding-left: 1rem;
+    padding-left: 1.5rem;
+    border-bottom-color: rgba(67, 126, 174, 0.3);
   }
 
   .story-block:hover .block-number {
     color: #437eae;
+    transform: translateX(4px);
+  }
+
+  .story-block:hover h3 {
+    color: #437eae;
+  }
+
+  .story-block h3 {
+    transition: color 0.3s ease;
   }
 
   .block-number {
@@ -394,7 +405,7 @@ import Footer from '../components/Footer.astro';
     letter-spacing: 0.15em;
     display: block;
     margin-bottom: 0.75rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
   }
 
   .story-block h3 {
@@ -465,8 +476,8 @@ import Footer from '../components/Footer.astro';
 
   .team-card:hover {
     border-color: rgba(67, 126, 174, 0.3);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(67, 126, 174, 0.1);
   }
 
   .team-photo-wrapper {
@@ -590,7 +601,16 @@ import Footer from '../components/Footer.astro';
   }
 
   .value-card:hover {
-    padding-left: 1rem;
+    padding-left: 1.5rem;
+    border-bottom-color: rgba(67, 126, 174, 0.3);
+  }
+
+  .value-card:hover h3 {
+    color: #437eae;
+  }
+
+  .value-content h3 {
+    transition: color 0.3s ease;
   }
 
   .value-icon {
@@ -598,11 +618,12 @@ import Footer from '../components/Footer.astro';
     width: 48px;
     height: 48px;
     opacity: 0.6;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .value-card:hover .value-icon {
     opacity: 1;
+    transform: scale(1.15) rotate(5deg);
   }
 
   .value-icon svg {
@@ -670,6 +691,9 @@ import Footer from '../components/Footer.astro';
     background: transparent;
     color: #437eae;
     border-color: #437eae;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(67, 126, 174, 0.2);
+    letter-spacing: 0.15em;
   }
 
   /* ===== SQUARES ===== */
@@ -678,6 +702,19 @@ import Footer from '../components/Footer.astro';
     border: 2px solid rgba(67, 126, 174, 0.12);
     pointer-events: none;
     transform: rotate(0deg);
+    animation: squareFloat 8s ease-in-out infinite;
+  }
+
+  .sq-2 { animation-delay: -2s; }
+  .sq-3 { animation-delay: -4s; }
+  .sq-4 { animation-delay: -1s; }
+  .sq-5 { animation-delay: -3s; }
+  .sq-6 { animation-delay: -5s; }
+  .sq-7 { animation-delay: -6s; }
+
+  @keyframes squareFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
   }
 
   .sq-1 {
@@ -736,16 +773,121 @@ import Footer from '../components/Footer.astro';
     opacity: 0.3;
   }
 
-  /* ===== ANIMATIONS ===== */
-  .animate-on-scroll {
+  /* ===== HERO LOAD ANIMATIONS ===== */
+  .hero-load {
     opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(30px);
+    animation: heroSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
-  .animate-on-scroll.visible {
+  .hero-load[data-delay="0"] { animation-delay: 0.2s; }
+  .hero-load[data-delay="1"] { animation-delay: 0.45s; }
+  .hero-load[data-delay="2"] { animation-delay: 0.65s; }
+  .hero-load[data-delay="3"] { animation-delay: 0.9s; }
+  .hero-load[data-delay="4"] { animation-delay: 1.15s; }
+
+  @keyframes heroSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-line {
+    width: 0;
+    height: 2px;
+    background: #437eae;
+    margin-top: 2.5rem;
+    animation: lineExpand 1s cubic-bezier(0.16, 1, 0.3, 1) 1.3s forwards;
+  }
+
+  @keyframes lineExpand {
+    from { width: 0; }
+    to { width: 120px; }
+  }
+
+  /* Hero hover effects */
+  .hero-title .line {
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-title:hover .line:first-child {
+    transform: translateX(8px);
+  }
+
+  .hero-title:hover .line:last-child {
+    transform: translateX(-8px);
+  }
+
+  .hero-title .blue {
+    transition: text-shadow 0.4s ease, letter-spacing 0.4s ease;
+  }
+
+  .hero-title:hover .blue {
+    text-shadow: 0 0 30px rgba(67, 126, 174, 0.3);
+    letter-spacing: 0.02em;
+  }
+
+  .hero-label {
+    transition: letter-spacing 0.4s ease, color 0.4s ease;
+  }
+
+  .hero-label:hover {
+    letter-spacing: 0.35em;
+  }
+
+  /* ===== SCROLL REVEAL ANIMATIONS ===== */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-reveal.revealed {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Story blocks slide from left */
+  .story-block.scroll-reveal {
+    transform: translateX(-30px) translateY(20px);
+  }
+
+  .story-block.scroll-reveal.revealed {
+    transform: translateX(0) translateY(0);
+  }
+
+  /* Team cards scale up */
+  .team-card.scroll-reveal {
+    transform: translateY(40px) scale(0.95);
+  }
+
+  .team-card.scroll-reveal.revealed {
+    transform: translateY(0) scale(1);
+  }
+
+  /* Value cards slide from right */
+  .value-card.scroll-reveal {
+    transform: translateX(30px) translateY(20px);
+  }
+
+  .value-card.scroll-reveal.revealed {
+    transform: translateX(0) translateY(0);
+  }
+
+  /* CTA fades + scales */
+  .cta-content.scroll-reveal {
+    transform: translateY(30px) scale(0.97);
+  }
+
+  .cta-content.scroll-reveal.revealed {
+    transform: translateY(0) scale(1);
   }
 
   /* ===== MOBILE ===== */
@@ -815,16 +957,19 @@ import Footer from '../components/Footer.astro';
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Scroll-triggered animations
-    const observer = new IntersectionObserver((entries) => {
+    // Scroll-triggered reveal animations with stagger
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          const delay = parseInt((entry.target as HTMLElement).dataset.revealDelay || '0');
+          setTimeout(() => {
+            entry.target.classList.add('revealed');
+          }, delay);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
 
     // Typewriter for story section
     const storyText = "it started with a single bench and a commitment to doing things the right way.";
