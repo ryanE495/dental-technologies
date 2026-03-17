@@ -9,7 +9,7 @@ const services = [
 ];
 ---
 
-<section id="services" class="services-section has-texture">
+<section id="services" class="services-section">
   <div class="services-container">
     <div class="services-left">
       <div class="services-left-inner">
@@ -28,7 +28,7 @@ const services = [
     </div>
     <div class="services-cards">
       {services.map((s, i) => (
-        <div class="service-card animate-on-scroll precision-hover" style={`transition-delay: ${i * 0.1}s`}>
+        <div class="service-card animate-on-scroll" style={`transition-delay: ${i * 0.1}s`}>
           <span class="card-num">{s.num}</span>
           <h3 class="card-title">{s.title}</h3>
           <p class="card-desc">{s.desc}</p>

@@ -9,18 +9,17 @@ import Footer from '../components/Footer.astro';
   <main>
 
     <!-- Hero Section -->
-    <section class="about-hero has-texture">
+    <section class="about-hero">
       <div class="container">
         <div class="hero-content">
-          <span class="hero-label hero-load" data-delay="0">ABOUT US</span>
-          <h1 class="hero-title">
-            <span class="line hero-load" data-delay="1">crafted by hand,</span>
-            <span class="line hero-load" data-delay="2">perfected by <span class="blue">experience</span></span>
+          <span class="hero-label animate-on-scroll">ABOUT US</span>
+          <h1 class="hero-title animate-on-scroll">
+            <span class="line">crafted by hand,</span>
+            <span class="line accent">perfected by <span class="blue">experience</span></span>
           </h1>
-          <p class="hero-description hero-load" data-delay="3">
+          <p class="hero-description animate-on-scroll">
             For over two decades, Dental Technologies Lab has been the trusted partner for dental practices that demand precision, quality, and artistry in every restoration.
           </p>
-          <div class="hero-line hero-load" data-delay="4"></div>
         </div>
       </div>
       <div class="subtle-square sq-1"></div>
@@ -29,7 +28,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Story Section -->
-    <section class="story-section has-texture has-tooth-watermark">
+    <section class="story-section">
       <div class="story-layout">
         <div class="story-left">
           <div class="story-left-inner">
@@ -47,17 +46,17 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div class="story-right">
-          <div class="story-block scroll-reveal" data-reveal-delay="0">
+          <div class="story-block animate-on-scroll">
             <span class="block-number">01</span>
             <h3>Where it began</h3>
             <p>What started as a small bench operation has grown into a full-service dental laboratory equipped with the latest in digital and analog fabrication technology. Our founder, Jeanette, built this lab on a simple principle: every restoration should be treated as if it's going into your own mouth.</p>
           </div>
-          <div class="story-block scroll-reveal" data-reveal-delay="150">
+          <div class="story-block animate-on-scroll">
             <span class="block-number">02</span>
             <h3>How we work</h3>
             <p>We combine advanced CAD/CAM technology with traditional handcrafting techniques. Digital precision meets artistic touch — because the best restorations aren't just technically accurate, they're indistinguishable from natural teeth.</p>
           </div>
-          <div class="story-block scroll-reveal" data-reveal-delay="300">
+          <div class="story-block animate-on-scroll">
             <span class="block-number">03</span>
             <h3>Why practices trust us</h3>
             <p>Consistency. When you send a case to our lab, you know exactly what you're getting back: a restoration that fits right the first time, matches the shade perfectly, and makes your patient smile. No surprises, no remakes, no excuses.</p>
@@ -71,47 +70,51 @@ import Footer from '../components/Footer.astro';
     <!-- Team Section -->
     <section class="team-section">
       <div class="team-layout">
-        <div class="team-left">
-          <div class="team-left-inner">
-            <div class="accent-line accent-line--light"></div>
-            <h2 class="section-title section-title--light">meet the team</h2>
-            <p class="team-intro">Three technicians. Decades of combined experience. One shared obsession with getting it right.</p>
-            <div class="arrow-container" id="team-arrow-container">
-              <svg viewBox="0 0 48 80" width="48" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="team-arrow-stem" d="M24 12L24 22" stroke="#437eae" stroke-width="2" stroke-linecap="round"/>
-                <path id="team-arrow-head" d="M8 12L24 22L40 12" stroke="#437eae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              </svg>
-            </div>
-          </div>
+        <div class="team-header">
+          <div class="accent-line"></div>
+          <h2 class="section-title animate-on-scroll">meet the team</h2>
+          <p class="team-intro animate-on-scroll">Three technicians. Decades of combined experience. One shared obsession with getting it right.</p>
         </div>
 
-        <div class="team-right">
-          <div class="team-card scroll-reveal precision-hover" data-reveal-delay="0">
+        <div class="team-grid">
+          <div class="team-card animate-on-scroll">
             <div class="team-photo-wrapper">
-              <img src="/images/jeanette.webp" alt="Jeanette Chiappinelli" loading="lazy" />
+              <img src="/images/jeanette.webp" alt="Jeanette Chiappinelli — Founder & Lead Technician" loading="lazy" />
+              <div class="photo-overlay">
+                <span class="overlay-role">founder & lead technician</span>
+              </div>
             </div>
             <div class="team-info">
               <h3 class="team-name">Jeanette</h3>
+              <span class="team-role">Founder & Lead Technician</span>
               <p class="team-bio">The hands behind the lab. Jeanette has spent over 20 years perfecting the art of dental restoration — from hand-layered porcelain veneers to complex implant cases. Her eye for shade matching and natural aesthetics is what sets DTL apart.</p>
             </div>
           </div>
 
-          <div class="team-card scroll-reveal precision-hover" data-reveal-delay="150">
+          <div class="team-card animate-on-scroll">
             <div class="team-photo-wrapper">
-              <img src="/images/dana.webp" alt="Dana" loading="lazy" />
+              <img src="/images/dana.webp" alt="Dana — Senior Technician" loading="lazy" />
+              <div class="photo-overlay">
+                <span class="overlay-role">senior technician</span>
+              </div>
             </div>
             <div class="team-info">
               <h3 class="team-name">Dana</h3>
+              <span class="team-role">Senior Technician</span>
               <p class="team-bio">Detail-oriented and meticulous, Dana specializes in CAD/CAM design and full-contour zirconia restorations. She brings digital precision to every case, ensuring margins are clean and contacts are spot-on.</p>
             </div>
           </div>
 
-          <div class="team-card scroll-reveal precision-hover" data-reveal-delay="300">
+          <div class="team-card animate-on-scroll">
             <div class="team-photo-wrapper">
-              <img src="https://bswmrfxdadcmuyhmsagv.supabase.co/storage/v1/object/public/portfolio-images/lisa.webp" alt="Lisa" loading="lazy" />
+              <img src="https://bswmrfxdadcmuyhmsagv.supabase.co/storage/v1/object/public/portfolio-images/lisa.webp" alt="Lisa — Technician" loading="lazy" />
+              <div class="photo-overlay">
+                <span class="overlay-role">technician</span>
+              </div>
             </div>
             <div class="team-info">
               <h3 class="team-name">Lisa</h3>
+              <span class="team-role">Technician</span>
               <p class="team-bio">Lisa rounds out the team with her expertise in dentures, partials, and removable prosthetics. Her attention to gingival characterization and tooth arrangement gives every case a natural, lifelike quality.</p>
             </div>
           </div>
@@ -120,7 +123,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Values Section -->
-    <section class="values-section has-texture">
+    <section class="values-section">
       <div class="values-layout">
         <div class="values-left">
           <div class="values-left-inner">
@@ -138,7 +141,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div class="values-right">
-          <div class="value-card scroll-reveal" data-reveal-delay="450" data-reveal-delay="300" data-reveal-delay="150" data-reveal-delay="0">
+          <div class="value-card animate-on-scroll">
             <div class="value-icon">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="24" cy="24" r="20" stroke="#437eae" stroke-width="1.5"/>
@@ -150,7 +153,7 @@ import Footer from '../components/Footer.astro';
               <p>We don't rush restorations out the door. Every case gets the time it needs — because a remake costs everyone more than doing it right the first time.</p>
             </div>
           </div>
-          <div class="value-card scroll-reveal">
+          <div class="value-card animate-on-scroll">
             <div class="value-icon">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z" stroke="#437eae" stroke-width="1.5"/>
@@ -162,7 +165,7 @@ import Footer from '../components/Footer.astro';
               <p>We source premium ceramics, zirconia, and alloys from trusted manufacturers. No shortcuts, no off-brand substitutes. Your patients deserve materials that last.</p>
             </div>
           </div>
-          <div class="value-card scroll-reveal">
+          <div class="value-card animate-on-scroll">
             <div class="value-icon">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24 4l6 12h13l-10 8 4 13-13-9-13 9 4-13L5 16h13z" stroke="#437eae" stroke-width="1.5" stroke-linejoin="round"/>
@@ -173,7 +176,7 @@ import Footer from '../components/Footer.astro';
               <p>We're not a faceless mail-order lab. We pick up the phone. We discuss cases. We build relationships with the practices we serve — because great dentistry is a team effort.</p>
             </div>
           </div>
-          <div class="value-card scroll-reveal">
+          <div class="value-card animate-on-scroll">
             <div class="value-icon">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="8" y="8" width="32" height="32" rx="4" stroke="#437eae" stroke-width="1.5"/>
@@ -194,7 +197,7 @@ import Footer from '../components/Footer.astro';
     <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
-        <div class="cta-content scroll-reveal" data-reveal-delay="0">
+        <div class="cta-content animate-on-scroll">
           <h2>ready to partner with us?</h2>
           <p>Send us your first case and see the difference precision craftsmanship makes.</p>
           <a href="/#contact" class="cta-button">Get In Touch</a>
@@ -278,11 +281,6 @@ import Footer from '../components/Footer.astro';
     padding: 6rem 0;
     overflow: hidden;
     position: relative;
-  }
-
-  .story-section::after {
-    right: -60px;
-    top: 15%;
   }
 
   .story-layout {
@@ -383,19 +381,10 @@ import Footer from '../components/Footer.astro';
 
   .story-block:hover {
     padding-left: 1rem;
-    border-bottom-color: rgba(67, 126, 174, 0.2);
   }
 
   .story-block:hover .block-number {
     color: #437eae;
-  }
-
-  .story-block:hover h3 {
-    color: #437eae;
-  }
-
-  .story-block h3 {
-    transition: color 0.3s ease;
   }
 
   .block-number {
@@ -429,74 +418,61 @@ import Footer from '../components/Footer.astro';
     background: #111827;
     padding: 6rem 0;
     overflow: hidden;
-    position: relative;
   }
 
   .team-layout {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
-    align-items: start;
   }
 
-  .team-left {
-    position: relative;
-    overflow: visible;
+  .team-header {
+    margin-bottom: 4rem;
   }
 
-  .team-left-inner {
-    position: sticky;
-    top: 8rem;
-  }
-
-  .accent-line--light {
+  .team-header .accent-line {
     background: #437eae;
   }
 
-  .section-title--light {
+  .team-header .section-title {
     color: #fff;
   }
 
-  .section-title--light:hover {
+  .team-header .section-title:hover {
     color: #437eae;
   }
 
   .team-intro {
     font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.7;
     color: #9CA3AF;
-    margin-bottom: 2rem;
+    max-width: 500px;
   }
 
-  .team-right {
-    display: flex;
-    flex-direction: column;
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
 
   .team-card {
-    display: flex;
-    gap: 2rem;
-    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     overflow: hidden;
-    align-items: start;
   }
 
   .team-card:hover {
-    border-color: rgba(67, 126, 174, 0.15);
+    border-color: rgba(67, 126, 174, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
   }
 
   .team-photo-wrapper {
-    flex-shrink: 0;
-    width: 160px;
-    height: 200px;
+    position: relative;
     overflow: hidden;
+    height: 320px;
   }
 
   .team-photo-wrapper img {
@@ -504,25 +480,59 @@ import Footer from '../components/Footer.astro';
     height: 100%;
     object-fit: cover;
     object-position: top;
-    filter: grayscale(30%);
-    transition: all 0.3s ease;
+    filter: grayscale(40%);
+    transition: all 0.5s ease;
   }
 
   .team-card:hover .team-photo-wrapper img {
     filter: grayscale(0%);
+    transform: scale(1.03);
+  }
+
+  .photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .team-card:hover .photo-overlay {
+    opacity: 1;
+  }
+
+  .overlay-role {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #437eae;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
   }
 
   .team-info {
-    flex: 1;
+    padding: 1.75rem;
   }
 
   .team-name {
     font-family: 'NeueHaasDisplayRoman', 'Inter', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 400;
     color: #fff;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.25rem;
     text-transform: lowercase;
+  }
+
+  .team-role {
+    font-family: 'NeueHaasDisplayThin', 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #437eae;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    display: block;
+    margin-bottom: 1rem;
   }
 
   .team-bio {
@@ -581,28 +591,18 @@ import Footer from '../components/Footer.astro';
 
   .value-card:hover {
     padding-left: 1rem;
-    border-bottom-color: rgba(67, 126, 174, 0.2);
-  }
-
-  .value-card:hover h3 {
-    color: #437eae;
-  }
-
-  .value-content h3 {
-    transition: color 0.3s ease;
   }
 
   .value-icon {
     flex-shrink: 0;
     width: 48px;
     height: 48px;
-    opacity: 0.5;
-    transition: all 0.3s ease;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
   }
 
   .value-card:hover .value-icon {
-    opacity: 0.85;
-    transform: scale(1.08);
+    opacity: 1;
   }
 
   .value-icon svg {
@@ -678,19 +678,6 @@ import Footer from '../components/Footer.astro';
     border: 2px solid rgba(67, 126, 174, 0.12);
     pointer-events: none;
     transform: rotate(0deg);
-    animation: squareFloat 8s ease-in-out infinite;
-  }
-
-  .sq-2 { animation-delay: -2s; }
-  .sq-3 { animation-delay: -4s; }
-  .sq-4 { animation-delay: -1s; }
-  .sq-5 { animation-delay: -3s; }
-  .sq-6 { animation-delay: -5s; }
-  .sq-7 { animation-delay: -6s; }
-
-  @keyframes squareFloat {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-12px) rotate(2deg); }
   }
 
   .sq-1 {
@@ -749,65 +736,14 @@ import Footer from '../components/Footer.astro';
     opacity: 0.3;
   }
 
-  /* ===== HERO LOAD ANIMATIONS ===== */
-  .hero-load {
+  /* ===== ANIMATIONS ===== */
+  .animate-on-scroll {
     opacity: 0;
-    transform: translateY(30px);
-    animation: heroSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  .hero-load[data-delay="0"] { animation-delay: 0.2s; }
-  .hero-load[data-delay="1"] { animation-delay: 0.45s; }
-  .hero-load[data-delay="2"] { animation-delay: 0.65s; }
-  .hero-load[data-delay="3"] { animation-delay: 0.9s; }
-  .hero-load[data-delay="4"] { animation-delay: 1.15s; }
-
-  @keyframes heroSlideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .hero-line {
-    width: 0;
-    height: 2px;
-    background: #437eae;
-    margin-top: 2.5rem;
-    animation: lineExpand 1s cubic-bezier(0.16, 1, 0.3, 1) 1.3s forwards;
-  }
-
-  @keyframes lineExpand {
-    from { width: 0; }
-    to { width: 120px; }
-  }
-
-  /* Hero hover effects */
-  .hero-title .line {
-    display: block;
-    transition: transform 0.3s ease;
-  }
-
-  .hero-title .blue {
-    transition: color 0.3s ease;
-  }
-
-  .hero-title:hover .blue {
-    color: #5a9fd4;
-  }
-
-  /* ===== SCROLL REVEAL ANIMATIONS ===== */
-  .scroll-reveal {
-    opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(25px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
-  .scroll-reveal.revealed {
+  .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
   }
@@ -815,21 +751,23 @@ import Footer from '../components/Footer.astro';
   /* ===== MOBILE ===== */
   @media (max-width: 1024px) {
     .story-layout,
-    .values-layout,
-    .team-layout {
+    .values-layout {
       grid-template-columns: 1fr;
       gap: 3rem;
     }
 
     .story-left-inner,
-    .values-left-inner,
-    .team-left-inner {
+    .values-left-inner {
       position: relative;
       top: auto;
     }
 
     .arrow-container {
       display: none;
+    }
+
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -851,14 +789,13 @@ import Footer from '../components/Footer.astro';
       padding: 4rem 0;
     }
 
-    .team-card {
-      flex-direction: column;
+    .team-grid {
+      grid-template-columns: 1fr;
       gap: 1.5rem;
     }
 
     .team-photo-wrapper {
-      width: 100%;
-      height: 250px;
+      height: 280px;
     }
 
     .story-block:hover,
@@ -878,19 +815,16 @@ import Footer from '../components/Footer.astro';
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Scroll-triggered reveal animations with stagger
-    const revealObserver = new IntersectionObserver((entries) => {
+    // Scroll-triggered animations
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const delay = parseInt((entry.target as HTMLElement).dataset.revealDelay || '0');
-          setTimeout(() => {
-            entry.target.classList.add('revealed');
-          }, delay);
+          entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
     // Typewriter for story section
     const storyText = "it started with a single bench and a commitment to doing things the right way.";
@@ -927,42 +861,8 @@ import Footer from '../components/Footer.astro';
       obs.observe(section);
     }
 
-    // Subtle parallax on background squares
-    const squares = document.querySelectorAll('.subtle-square');
-    if (squares.length > 0) {
-      window.addEventListener('scroll', function() {
-        const scrollY = window.scrollY;
-        squares.forEach((sq, i) => {
-          const speed = 0.03 + (i * 0.008);
-          (sq as HTMLElement).style.transform = 'translateY(' + (scrollY * -speed) + 'px)';
-        });
-      }, { passive: true });
-    }
-
-    // Accent line draw-in on scroll
-    const accentLines = document.querySelectorAll('.accent-line');
-    if (accentLines.length > 0) {
-      accentLines.forEach(line => {
-        const el = line as HTMLElement;
-        el.dataset.fullWidth = getComputedStyle(el).width || '48px';
-        el.style.width = '0';
-        el.style.transition = 'width 0.8s ease';
-      });
-      const lineObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const el = entry.target as HTMLElement;
-            el.style.width = el.dataset.fullWidth || '48px';
-            lineObserver.unobserve(el);
-          }
-        });
-      }, { threshold: 0.15 });
-      accentLines.forEach(line => lineObserver.observe(line));
-    }
-
     // Scroll arrows
     setupArrow('story', '.story-section', '.story-right');
-    setupArrow('team', '.team-section', '.team-right');
     setupArrow('values', '.values-section', '.values-right');
 
     function setupArrow(id: string, sectionSel: string, rightSel: string) {
