@@ -56,21 +56,23 @@ import Footer from '../components/Footer.astro';
 		// Accent line draw-in on scroll
 		const accentLines = document.querySelectorAll('.accent-line, .gold-line');
 		if (accentLines.length > 0) {
+			accentLines.forEach(line => {
+				const el = line as HTMLElement;
+				const fullWidth = getComputedStyle(el).width || '48px';
+				el.dataset.fullWidth = fullWidth;
+				el.style.width = '0';
+				el.style.transition = 'width 0.8s ease';
+			});
 			const lineObserver = new IntersectionObserver((entries) => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
-						(entry.target as HTMLElement).style.transition = 'width 0.8s ease';
-						(entry.target as HTMLElement).style.width = getComputedStyle(entry.target).maxWidth || '48px';
-						entry.target.classList.add('line-drawn');
+						const el = entry.target as HTMLElement;
+						el.style.width = el.dataset.fullWidth || '48px';
+						lineObserver.unobserve(el);
 					}
 				});
-			}, { threshold: 0.5 });
-			accentLines.forEach(line => {
-				const computedWidth = getComputedStyle(line).width;
-				(line as HTMLElement).dataset.fullWidth = computedWidth;
-				(line as HTMLElement).style.width = '0';
-				lineObserver.observe(line);
-			});
+			}, { threshold: 0.15 });
+			accentLines.forEach(line => lineObserver.observe(line));
 		}
 	});
 </script>

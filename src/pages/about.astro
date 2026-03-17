@@ -942,21 +942,22 @@ import Footer from '../components/Footer.astro';
     // Accent line draw-in on scroll
     const accentLines = document.querySelectorAll('.accent-line');
     if (accentLines.length > 0) {
+      accentLines.forEach(line => {
+        const el = line as HTMLElement;
+        el.dataset.fullWidth = getComputedStyle(el).width || '48px';
+        el.style.width = '0';
+        el.style.transition = 'width 0.8s ease';
+      });
       const lineObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const el = entry.target as HTMLElement;
-            el.style.transition = 'width 0.8s ease';
             el.style.width = el.dataset.fullWidth || '48px';
+            lineObserver.unobserve(el);
           }
         });
-      }, { threshold: 0.5 });
-      accentLines.forEach(line => {
-        const el = line as HTMLElement;
-        el.dataset.fullWidth = getComputedStyle(line).width;
-        el.style.width = '0';
-        lineObserver.observe(line);
-      });
+      }, { threshold: 0.15 });
+      accentLines.forEach(line => lineObserver.observe(line));
     }
 
     // Scroll arrows
