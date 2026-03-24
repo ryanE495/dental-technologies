@@ -17,7 +17,6 @@ const services = [
       'Maryland & cantilever bridges',
       'Same-day digital design available',
     ],
-    icon: '👑',
   },
   {
     id: 'veneers',
@@ -32,7 +31,6 @@ const services = [
       'Wax-up previews available',
       'Consistent color across full arches',
     ],
-    icon: '✨',
   },
   {
     id: 'implant-restorations',
@@ -47,7 +45,6 @@ const services = [
       'Digital implant planning integration',
       'Bar-retained overdentures',
     ],
-    icon: '🔩',
   },
   {
     id: 'dentures-partials',
@@ -62,13 +59,12 @@ const services = [
       'Premium teeth selection',
       'Characterized gingival tones & stippling',
     ],
-    icon: '🦷',
   },
   {
     id: 'custom-shades',
     num: '05',
     title: 'Custom Shade Matching',
-    summary: 'Expert shade analysis with over 20 years of experience creating restorations that disappear into natural dentition.',
+    summary: 'Expert shade analysis with over 20 years of experience — creating restorations that disappear into natural dentition.',
     details: [
       'In-person shade appointments available',
       'Custom staining & characterization',
@@ -77,7 +73,6 @@ const services = [
       'Multi-layered color matching',
       'Expertise across all ceramic systems',
     ],
-    icon: '🎨',
   },
   {
     id: 'digital-workflow',
@@ -92,57 +87,58 @@ const services = [
       'Faster turnaround with digital cases',
       'STL / PLY / DCM file compatible',
     ],
-    icon: '💻',
   },
 ];
 ---
 
-<Layout title="Our Services — Dental Technologies Lab" description="Full-service dental lab offering crowns, bridges, veneers, implant restorations, dentures, custom shades, and digital CAD/CAM workflows. Serving practices across Colorado.">
+<Layout title="Our Services — Dental Technologies Lab" description="Full-service dental lab offering crowns, bridges, veneers, implant restorations, dentures, custom shades, and digital CAD/CAM workflows.">
   <Header />
   <main>
 
     <!-- Hero -->
     <section class="services-hero">
-      <div class="container">
-        <div class="hero-content">
-          <span class="hero-label hero-load" style="--delay: 0s">OUR SERVICES</span>
-          <h1 class="hero-title hero-load" style="--delay: 0.15s">
-            <span class="line">precision for</span>
-            <span class="line accent">every <span class="blue">restoration</span></span>
-          </h1>
-          <p class="hero-description hero-load" style="--delay: 0.3s">
-            From single crowns to full-arch rehabilitations, every case receives the same 
-            meticulous attention to detail. We combine decades of hand-craftsmanship with 
-            modern digital workflows to deliver restorations your patients will love.
-          </p>
-        </div>
+      <div class="hero-content">
+        <span class="hero-label hero-load" style="--delay: 0s">OUR SERVICES</span>
+        <h1 class="hero-title hero-load" style="--delay: 0.15s">
+          <span class="line">precision for</span>
+          <span class="line accent">every <span class="blue">restoration</span></span>
+        </h1>
+        <p class="hero-description hero-load" style="--delay: 0.3s">
+          From single crowns to full-arch rehabilitations, every case receives the same 
+          meticulous attention to detail. We combine decades of hand-craftsmanship with 
+          modern digital workflows to deliver restorations your patients will love.
+        </p>
       </div>
-      <div class="hero-squares">
-        <div class="square square-1"></div>
-        <div class="square square-2"></div>
-        <div class="square square-3"></div>
-      </div>
+      <div class="subtle-square sq-1"></div>
+      <div class="subtle-square sq-2"></div>
+      <div class="subtle-square sq-3"></div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="services-detail">
-      <div class="container">
-        <div class="services-intro scroll-reveal">
-          <div class="blue-line"></div>
-          <p class="intro-text">
-            We work with practices across Colorado — from general dentists to prosthodontists — 
-            delivering lab work that fits right, looks natural, and arrives on time. Every time.
-          </p>
+    <!-- Services Section — Two-column layout matching site pattern -->
+    <section class="services-section">
+      <div class="services-layout">
+        <div class="services-left">
+          <div class="services-left-inner">
+            <div class="accent-line"></div>
+            <h2 class="section-title">what we do</h2>
+            <p class="section-subtitle">
+              <span class="typewriter-text" id="services-typewriter"></span><span class="typewriter-cursor">|</span>
+            </p>
+            <div class="arrow-container" id="services-arrow-container">
+              <svg viewBox="0 0 48 80" width="48" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="services-arrow-stem" d="M24 12L24 22" stroke="#437eae" stroke-width="2" stroke-linecap="round"/>
+                <path id="services-arrow-head" d="M8 12L24 22L40 12" stroke="#437eae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
         </div>
-
-        <div class="services-grid">
+        <div class="services-right">
           {services.map((service, i) => (
-            <div class={`service-card scroll-reveal`} style={`--delay: ${i * 0.08}s`} id={service.id}>
-              <div class="card-icon">{service.icon}</div>
-              <div class="card-num">{service.num}</div>
-              <h2 class="card-title">{service.title}</h2>
-              <p class="card-summary">{service.summary}</p>
-              <ul class="card-details">
+            <div class="service-block animate-on-scroll" id={service.id} style={`transition-delay: ${i * 0.08}s`}>
+              <span class="block-number">{service.num}</span>
+              <h3>{service.title}</h3>
+              <p class="block-summary">{service.summary}</p>
+              <ul class="block-details">
                 {service.details.map(d => (
                   <li>{d}</li>
                 ))}
@@ -151,26 +147,31 @@ const services = [
           ))}
         </div>
       </div>
+      <div class="subtle-square sq-4"></div>
+      <div class="subtle-square sq-5"></div>
     </section>
 
     <!-- CTA Section -->
-    <section class="services-cta">
-      <div class="container">
-        <div class="cta-content scroll-reveal">
-          <h2 class="cta-title">ready to get started?</h2>
-          <p class="cta-text">
-            Send us your first case or schedule a consultation. We'll show you 
-            what precision lab work really looks like.
-          </p>
-          <div class="cta-buttons">
-            <a href="/contact" class="btn-primary">Contact Us</a>
-            <a href="tel:+19709451840" class="btn-secondary">Call (970) 945-1840</a>
+    <section class="cta-section">
+      <div class="cta-layout">
+        <div class="cta-left">
+          <div class="cta-left-inner">
+            <div class="accent-line accent-line--light"></div>
+            <h2 class="section-title section-title--light">get started</h2>
           </div>
         </div>
-      </div>
-      <div class="cta-squares">
-        <div class="square square-1"></div>
-        <div class="square square-2"></div>
+        <div class="cta-right">
+          <div class="cta-block animate-on-scroll">
+            <p class="cta-text">
+              Send us your first case or schedule a consultation. We'll show you 
+              what precision lab work really looks like.
+            </p>
+            <div class="cta-buttons">
+              <a href="/contact" class="btn-primary">Contact Us</a>
+              <a href="tel:+19709451840" class="btn-secondary">Call (970) 945-1840</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -179,21 +180,35 @@ const services = [
 </Layout>
 
 <style>
+  /* ===== GLOBAL ===== */
+  :global(.animate-on-scroll) {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  :global(.animate-on-scroll.animate-in) {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
   /* ===== HERO ===== */
   .services-hero {
-    background: #1a1a1a;
-    padding: 8rem 0 5rem;
+    background: #efeeea;
+    min-height: 70vh;
+    display: flex;
+    align-items: flex-start;
+    padding: 8rem 0 4rem;
     position: relative;
     overflow: hidden;
   }
-  .container {
+  .hero-content {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 2rem;
     position: relative;
     z-index: 1;
   }
-  .hero-content { max-width: 720px; }
   .hero-label {
     display: inline-block;
     font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
@@ -208,9 +223,9 @@ const services = [
   }
   .hero-title {
     font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    line-height: 1.15;
-    color: #ffffff;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.12;
+    color: #111827;
     margin: 0 0 1.5rem;
   }
   .hero-title .line { display: block; }
@@ -221,26 +236,11 @@ const services = [
   .hero-title .blue { color: #437eae; }
   .hero-description {
     font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     line-height: 1.7;
-    color: #9CA3AF;
+    color: #6B7280;
     max-width: 560px;
   }
-  .hero-squares {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-  .square {
-    position: absolute;
-    border: 2px solid rgba(67,126,174,0.08);
-  }
-  .hero-squares .square-1 { width: 300px; height: 300px; top: -60px; right: 5%; }
-  .hero-squares .square-2 { width: 180px; height: 180px; bottom: -40px; right: 25%; }
-  .hero-squares .square-3 { width: 120px; height: 120px; top: 30%; right: 15%; border-color: rgba(67,126,174,0.05); }
-
-  /* ===== HERO ANIMATIONS ===== */
   .hero-load {
     opacity: 0;
     transform: translateY(24px);
@@ -251,45 +251,102 @@ const services = [
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ===== SERVICES DETAIL ===== */
-  .services-detail {
+  /* ===== SUBTLE SQUARES ===== */
+  .subtle-square {
+    position: absolute;
+    border: 2px solid rgba(67,126,174,0.08);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .sq-1 { width: 300px; height: 300px; top: -60px; right: 5%; }
+  .sq-2 { width: 180px; height: 180px; bottom: -40px; right: 25%; }
+  .sq-3 { width: 120px; height: 120px; top: 30%; right: 15%; border-color: rgba(67,126,174,0.05); }
+  .sq-4 { width: 250px; height: 250px; top: 10%; right: -120px; }
+  .sq-5 { width: 160px; height: 160px; bottom: 15%; left: -80px; border-color: rgba(67,126,174,0.06); }
+
+  /* ===== SERVICES SECTION ===== */
+  .services-section {
     background: #efeeea;
-    padding: 5rem 0 4rem;
+    padding: 6rem 0 4rem;
+    position: relative;
+    overflow: hidden;
   }
-  .services-intro {
-    max-width: 640px;
-    margin: 0 auto 4rem;
-    text-align: center;
+  .services-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+    position: relative;
+    z-index: 1;
   }
-  .blue-line {
+
+  /* Left column — sticky */
+  .services-left {
+    position: sticky;
+    top: 6rem;
+    z-index: 1;
+  }
+  .services-left-inner { position: relative; }
+  .accent-line {
     width: 48px;
     height: 3px;
     background: #437eae;
-    margin: 0 auto 1.5rem;
+    margin-bottom: 1rem;
   }
-  .intro-text {
+  .accent-line--light {
+    background: #437eae;
+  }
+  .section-title {
+    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
+    font-size: 2.5rem;
+    color: #111827;
+    margin: 0 0 0.75rem;
+    text-transform: lowercase;
+  }
+  .section-title--light { color: #ffffff; }
+  .section-subtitle {
     font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
     font-size: 1.1rem;
-    line-height: 1.7;
-    color: #4B5563;
+    color: #6B7280;
+    margin: 0 0 2rem;
+    min-height: 1.5em;
+  }
+  .typewriter-cursor {
+    color: #437eae;
+    animation: blink 0.8s step-end infinite;
+    font-weight: 300;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .arrow-container {
+    position: absolute;
+    top: auto;
+    left: 0;
+    height: 80px;
+    overflow: visible;
+    pointer-events: none;
   }
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+  /* Right column — service blocks */
+  .services-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 1;
   }
-
-  .service-card {
+  .service-block {
     background: #f8f7f4;
     border: 1px solid #E5E7EB;
     border-radius: 8px;
-    padding: 2.5rem;
+    padding: 2.25rem;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .service-card::before {
+  .service-block::before {
     content: '';
     position: absolute;
     top: 0;
@@ -301,93 +358,100 @@ const services = [
     transform-origin: left;
     transition: transform 0.4s ease;
   }
-  .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  .service-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.06);
   }
-  .service-card:hover::before {
+  .service-block:hover::before {
     transform: scaleX(1);
   }
-
-  .card-icon {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
-  }
-  .card-num {
+  .block-number {
     font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
     color: #437eae;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 1px;
+    display: block;
     margin-bottom: 0.5rem;
   }
-  .card-title {
+  .service-block h3 {
     font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
     color: #111827;
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     margin: 0 0 0.75rem;
   }
-  .card-summary {
+  .block-summary {
     font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
     color: #6B7280;
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.65;
     margin: 0 0 1.25rem;
   }
-  .card-details {
+  .block-details {
     list-style: none;
     padding: 0;
     margin: 0;
     border-top: 1px solid #E5E7EB;
-    padding-top: 1.25rem;
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 16px;
   }
-  .card-details li {
+  .block-details li {
     font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: #4B5563;
-    padding: 5px 0 5px 18px;
+    padding: 4px 0 4px 16px;
     position: relative;
     line-height: 1.5;
   }
-  .card-details li::before {
+  .block-details li::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 12px;
-    width: 6px;
-    height: 6px;
+    top: 11px;
+    width: 5px;
+    height: 5px;
     background: #437eae;
     border-radius: 1px;
   }
 
   /* ===== CTA SECTION ===== */
-  .services-cta {
+  .cta-section {
     background: #1a1a1a;
-    padding: 5rem 0;
+    padding: 5rem 0 4rem;
     position: relative;
     overflow: hidden;
-    text-align: center;
   }
-  .cta-content { position: relative; z-index: 1; }
-  .cta-title {
-    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    color: #ffffff;
-    margin: 0 0 1rem;
-    text-transform: lowercase;
+  .cta-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .cta-left {
+    position: relative;
+    z-index: 1;
+  }
+  .cta-right {
+    z-index: 1;
+  }
+  .cta-block {
+    max-width: 520px;
   }
   .cta-text {
     font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
     font-size: 1.1rem;
     color: #9CA3AF;
     line-height: 1.7;
-    max-width: 500px;
-    margin: 0 auto 2rem;
+    margin: 0 0 2rem;
   }
   .cta-buttons {
     display: flex;
     gap: 1rem;
-    justify-content: center;
     flex-wrap: wrap;
   }
   .btn-primary {
@@ -424,45 +488,94 @@ const services = [
     color: white;
     border-color: rgba(255,255,255,0.4);
   }
-  .cta-squares {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-  .cta-squares .square-1 { width: 200px; height: 200px; top: -40px; left: 8%; }
-  .cta-squares .square-2 { width: 140px; height: 140px; bottom: -30px; right: 12%; }
-
-  /* ===== SCROLL ANIMATIONS ===== */
-  .scroll-reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transition-delay: var(--delay, 0s);
-  }
-  .scroll-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
-    .services-hero { padding: 7rem 0 3.5rem; }
-    .services-grid { grid-template-columns: 1fr; }
-    .service-card { padding: 2rem; }
-    .cta-buttons { flex-direction: column; align-items: center; }
+    .services-hero {
+      min-height: auto;
+      padding: 7rem 0 3rem;
+    }
+    .services-layout,
+    .cta-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .services-left {
+      position: relative;
+      top: 0;
+    }
+    .arrow-container { display: none; }
+    .block-details { grid-template-columns: 1fr; }
+    .cta-buttons { flex-direction: column; }
+    .cta-buttons a { text-align: center; }
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Typewriter
+    const text = 'precision craftsmanship for every restoration';
+    const el = document.getElementById('services-typewriter');
+    const section = document.querySelector('.services-section');
+    if (el && section) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            let i = 0;
+            const type = () => {
+              if (i < text.length) {
+                el.textContent += text[i];
+                i++;
+                setTimeout(type, 50);
+              }
+            };
+            setTimeout(type, 300);
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(section);
+    }
+
+    // Scroll arrow
+    const svc = document.querySelector('.services-section') as HTMLElement | null;
+    const arrowC = document.getElementById('services-arrow-container');
+    const stem = document.getElementById('services-arrow-stem');
+    const head = document.getElementById('services-arrow-head');
+    if (svc && arrowC && stem && head) {
+      const rightCol = document.querySelector('.services-right') as HTMLElement | null;
+      function updateArrow() {
+        const rect = svc!.getBoundingClientRect();
+        const maxH = rightCol ? rightCol.offsetHeight - 40 : 400;
+        const wh = window.innerHeight;
+        let progress = 0;
+        if (rect.top <= wh && rect.bottom >= 0 && rect.top <= wh * 0.5) {
+          progress = Math.min(1, Math.max(0, wh * 0.5 - rect.top) / (maxH * 1.5));
+        }
+        const h = 80 + (progress * (maxH - 80));
+        arrowC!.style.height = h + 'px';
+        const svg = arrowC!.querySelector('svg');
+        if (svg) {
+          svg.setAttribute('viewBox', '0 0 48 ' + Math.max(42, h));
+          svg.style.height = h + 'px';
+        }
+        const stemEnd = 22 + (progress * (h - 60));
+        stem!.setAttribute('d', 'M24 12L24 ' + stemEnd);
+        head!.setAttribute('d', 'M8 ' + Math.max(12, stemEnd - 12) + 'L24 ' + stemEnd + 'L40 ' + Math.max(12, stemEnd - 12));
+      }
+      window.addEventListener('scroll', updateArrow);
+      updateArrow();
+    }
+
+    // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.classList.add('animate-in');
         }
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
   });
 </script>
 </Layout>
