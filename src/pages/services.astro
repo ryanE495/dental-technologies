@@ -1,0 +1,468 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    id: 'crowns-bridges',
+    num: '01',
+    title: 'Crowns & Bridges',
+    summary: 'Full-contour zirconia, porcelain-fused-to-metal, and all-ceramic restorations crafted with precision fit and natural aesthetics.',
+    details: [
+      'Full-contour zirconia (monolithic & layered)',
+      'Porcelain-fused-to-metal (PFM)',
+      'All-ceramic / e.max',
+      'Implant-supported crowns',
+      'Maryland & cantilever bridges',
+      'Same-day digital design available',
+    ],
+    icon: '👑',
+  },
+  {
+    id: 'veneers',
+    num: '02',
+    title: 'Veneers & Laminates',
+    summary: 'Ultra-thin porcelain veneers with custom shade matching for seamless, natural-looking smile transformations.',
+    details: [
+      'Porcelain veneers (feldspathic & pressed)',
+      'Ultra-thin no-prep laminates',
+      'Custom shade matching & staining',
+      'Smile design collaboration',
+      'Wax-up previews available',
+      'Consistent color across full arches',
+    ],
+    icon: '✨',
+  },
+  {
+    id: 'implant-restorations',
+    num: '03',
+    title: 'Implant Restorations',
+    summary: 'Custom abutments and implant-supported prosthetics compatible with all major implant systems.',
+    details: [
+      'Custom titanium & zirconia abutments',
+      'Screw-retained & cement-retained crowns',
+      'All-on-4 / All-on-6 hybrid prosthetics',
+      'Compatible with Nobel, Straumann, Zimmer & more',
+      'Digital implant planning integration',
+      'Bar-retained overdentures',
+    ],
+    icon: '🔩',
+  },
+  {
+    id: 'dentures-partials',
+    num: '04',
+    title: 'Dentures & Partials',
+    summary: 'Full and partial dentures with premium teeth, characterized gingival tones, and comfortable precision fit.',
+    details: [
+      'Full conventional dentures',
+      'Immediate dentures',
+      'Cast metal partial frameworks',
+      'Flexible partials (Valplast)',
+      'Premium teeth selection',
+      'Characterized gingival tones & stippling',
+    ],
+    icon: '🦷',
+  },
+  {
+    id: 'custom-shades',
+    num: '05',
+    title: 'Custom Shade Matching',
+    summary: 'Expert shade analysis with over 20 years of experience creating restorations that disappear into natural dentition.',
+    details: [
+      'In-person shade appointments available',
+      'Custom staining & characterization',
+      'Digital shade analysis',
+      'Cross-reference with patient photos',
+      'Multi-layered color matching',
+      'Expertise across all ceramic systems',
+    ],
+    icon: '🎨',
+  },
+  {
+    id: 'digital-workflow',
+    num: '06',
+    title: 'Digital Impressions & CAD/CAM',
+    summary: 'Fully digital workflows accepting all major intraoral scanners for faster, more accurate restorations.',
+    details: [
+      'Accept all major intraoral scanners',
+      'In-house CAD/CAM milling',
+      '3D printing for models & guides',
+      'Digital design preview before fabrication',
+      'Faster turnaround with digital cases',
+      'STL / PLY / DCM file compatible',
+    ],
+    icon: '💻',
+  },
+];
+---
+
+<Layout title="Our Services — Dental Technologies Lab" description="Full-service dental lab offering crowns, bridges, veneers, implant restorations, dentures, custom shades, and digital CAD/CAM workflows. Serving practices across Colorado.">
+  <Header />
+  <main>
+
+    <!-- Hero -->
+    <section class="services-hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-label hero-load" style="--delay: 0s">OUR SERVICES</span>
+          <h1 class="hero-title hero-load" style="--delay: 0.15s">
+            <span class="line">precision for</span>
+            <span class="line accent">every <span class="blue">restoration</span></span>
+          </h1>
+          <p class="hero-description hero-load" style="--delay: 0.3s">
+            From single crowns to full-arch rehabilitations, every case receives the same 
+            meticulous attention to detail. We combine decades of hand-craftsmanship with 
+            modern digital workflows to deliver restorations your patients will love.
+          </p>
+        </div>
+      </div>
+      <div class="hero-squares">
+        <div class="square square-1"></div>
+        <div class="square square-2"></div>
+        <div class="square square-3"></div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-detail">
+      <div class="container">
+        <div class="services-intro scroll-reveal">
+          <div class="blue-line"></div>
+          <p class="intro-text">
+            We work with practices across Colorado — from general dentists to prosthodontists — 
+            delivering lab work that fits right, looks natural, and arrives on time. Every time.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          {services.map((service, i) => (
+            <div class={`service-card scroll-reveal`} style={`--delay: ${i * 0.08}s`} id={service.id}>
+              <div class="card-icon">{service.icon}</div>
+              <div class="card-num">{service.num}</div>
+              <h2 class="card-title">{service.title}</h2>
+              <p class="card-summary">{service.summary}</p>
+              <ul class="card-details">
+                {service.details.map(d => (
+                  <li>{d}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="services-cta">
+      <div class="container">
+        <div class="cta-content scroll-reveal">
+          <h2 class="cta-title">ready to get started?</h2>
+          <p class="cta-text">
+            Send us your first case or schedule a consultation. We'll show you 
+            what precision lab work really looks like.
+          </p>
+          <div class="cta-buttons">
+            <a href="/contact" class="btn-primary">Contact Us</a>
+            <a href="tel:+19709451840" class="btn-secondary">Call (970) 945-1840</a>
+          </div>
+        </div>
+      </div>
+      <div class="cta-squares">
+        <div class="square square-1"></div>
+        <div class="square square-2"></div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* ===== HERO ===== */
+  .services-hero {
+    background: #1a1a1a;
+    padding: 8rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-content { max-width: 720px; }
+  .hero-label {
+    display: inline-block;
+    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: #437eae;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    padding: 6px 16px;
+    border: 1px solid rgba(67,126,174,0.3);
+    border-radius: 2px;
+  }
+  .hero-title {
+    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    color: #ffffff;
+    margin: 0 0 1.5rem;
+  }
+  .hero-title .line { display: block; }
+  .hero-title .accent {
+    font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
+    font-weight: 200;
+  }
+  .hero-title .blue { color: #437eae; }
+  .hero-description {
+    font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #9CA3AF;
+    max-width: 560px;
+  }
+  .hero-squares {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .square {
+    position: absolute;
+    border: 2px solid rgba(67,126,174,0.08);
+  }
+  .hero-squares .square-1 { width: 300px; height: 300px; top: -60px; right: 5%; }
+  .hero-squares .square-2 { width: 180px; height: 180px; bottom: -40px; right: 25%; }
+  .hero-squares .square-3 { width: 120px; height: 120px; top: 30%; right: 15%; border-color: rgba(67,126,174,0.05); }
+
+  /* ===== HERO ANIMATIONS ===== */
+  .hero-load {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: heroFadeUp 0.7s ease forwards;
+    animation-delay: var(--delay, 0s);
+  }
+  @keyframes heroFadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== SERVICES DETAIL ===== */
+  .services-detail {
+    background: #efeeea;
+    padding: 5rem 0 4rem;
+  }
+  .services-intro {
+    max-width: 640px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+  .blue-line {
+    width: 48px;
+    height: 3px;
+    background: #437eae;
+    margin: 0 auto 1.5rem;
+  }
+  .intro-text {
+    font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4B5563;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: #f8f7f4;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #437eae, #6fa3d4);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  }
+  .service-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .card-num {
+    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
+    color: #437eae;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+  .card-title {
+    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
+    color: #111827;
+    font-size: 1.35rem;
+    margin: 0 0 0.75rem;
+  }
+  .card-summary {
+    font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
+    color: #6B7280;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+  }
+  .card-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #E5E7EB;
+    padding-top: 1.25rem;
+  }
+  .card-details li {
+    font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
+    font-size: 0.88rem;
+    color: #4B5563;
+    padding: 5px 0 5px 18px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .card-details li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    background: #437eae;
+    border-radius: 1px;
+  }
+
+  /* ===== CTA SECTION ===== */
+  .services-cta {
+    background: #1a1a1a;
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .cta-content { position: relative; z-index: 1; }
+  .cta-title {
+    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: #ffffff;
+    margin: 0 0 1rem;
+    text-transform: lowercase;
+  }
+  .cta-text {
+    font-family: 'NeueHaasDisplayThin', Inter, sans-serif;
+    font-size: 1.1rem;
+    color: #9CA3AF;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-block;
+    padding: 14px 36px;
+    background: #437eae;
+    color: white;
+    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+  .btn-primary:hover {
+    background: #356a96;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(67,126,174,0.3);
+  }
+  .btn-secondary {
+    display: inline-block;
+    padding: 14px 36px;
+    background: transparent;
+    color: #9CA3AF;
+    font-family: 'NeueHaasDisplayRoman', Inter, sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 1px solid rgba(156,163,175,0.3);
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+  .btn-secondary:hover {
+    color: white;
+    border-color: rgba(255,255,255,0.4);
+  }
+  .cta-squares {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .cta-squares .square-1 { width: 200px; height: 200px; top: -40px; left: 8%; }
+  .cta-squares .square-2 { width: 140px; height: 140px; bottom: -30px; right: 12%; }
+
+  /* ===== SCROLL ANIMATIONS ===== */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: var(--delay, 0s);
+  }
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .services-hero { padding: 7rem 0 3.5rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card { padding: 2rem; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+  });
+</script>
+</Layout>
